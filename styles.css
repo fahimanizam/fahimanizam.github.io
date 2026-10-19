@@ -128,3 +128,142 @@
     }
   }
   
+/* ==========================================
+   RESPONSIVE DESIGN / MEDIA QUERIES
+   ========================================== */
+
+/* Tablet & Mobile Adjustments (Max Width: 992px) */
+@media screen and (max-width: 992px) {
+  /* Stack two-column grid into a single column */
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  /* Make grid containers full width */
+  .skills-container,
+  .projects-container,
+  .mini-projects-grid,
+  .vision-grid,
+  .library-grid,
+  .blog-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  }
+}
+
+/* Mobile Devices (Max Width: 768px) */
+@media screen and (max-width: 768px) {
+  /* Prevent horizontal scrolling overflow */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Navbar Adjustments */
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 15px;
+  }
+
+  .nav-menu a {
+    font-size: 14px;
+  }
+
+  /* Main Container Padding */
+  .container {
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Hero Section */
+  .title h1 {
+    font-size: 1.8rem;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Side Floating Social Bar & Scroll Buttons */
+  /* Move floating side wrapper to bottom center or adjust layout so it doesn't block content */
+  .side-wrapper {
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+    z-index: 1000;
+  }
+
+  .social-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .social-item {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  /* Hide long email tooltips on small touchscreens to prevent overflow */
+  .social-item .tooltip {
+    display: none !important;
+  }
+
+  /* Projects & Cards */
+  .project-card, 
+  .mini-project, 
+  .vision-card, 
+  .blog-card {
+    padding: 15px;
+  }
+
+  /* Modal Windows (Book & Blog Modals) */
+  .book-content, 
+  .blog-content {
+    width: 90% !important;
+    max-width: 100%;
+    padding: 20px;
+    margin: 20% auto;
+  }
+}
+
+/* Extra Small Mobile Screens (Max Width: 480px) */
+@media screen and (max-width: 480px) {
+  .nav-menu {
+    gap: 8px;
+  }
+
+  .nav-menu a {
+    font-size: 12px;
+  }
+
+  .title h1 {
+    font-size: 1.5rem;
+  }
+
+  .mini-projects-grid,
+  .projects-container {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
