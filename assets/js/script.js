@@ -233,15 +233,17 @@
     const blogCards = document.querySelectorAll(".blog-card");
     const modal = document.getElementById("blogModal");
     const modalTitle = document.getElementById("modalTitle");
-    const modalImage = document.getElementById("modalImage");
+    const modalDate = document.getElementById("modalDate");
     const modalText = document.getElementById("modalText");
+    const modalLink = document.getElementById("modalLink");
     const closeBtn = document.querySelector(".close-btn");
 
     blogCards.forEach(card => {
       card.addEventListener("click", () => {
         modalTitle.textContent = card.dataset.title;
-        modalImage.src = card.dataset.image;
+        modalDate.textContent = card.dataset.date;
         modalText.textContent = card.dataset.content;
+        modalLink.href = card.dataset.link;
         modal.style.display = "flex";
       });
     });
