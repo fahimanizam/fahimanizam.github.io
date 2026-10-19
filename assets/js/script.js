@@ -189,6 +189,31 @@
       if (event.target === modal) modal.style.display = "none";
     }
 
+    // Resume Modal
+    const resumeModal = document.getElementById("resumeModal");
+    const resumeFrame = document.getElementById("resumeFrame");
+    const resumePreviewUrl = "https://drive.google.com/file/d/1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo/preview";
+
+    document.getElementById("viewResumeBtn").addEventListener("click", (e) => {
+      e.preventDefault();
+      if (!resumeFrame.src) resumeFrame.src = resumePreviewUrl;
+      resumeModal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    });
+
+    function closeResume() {
+      resumeModal.style.display = "none";
+      document.body.style.overflow = "";
+    }
+
+    resumeModal.addEventListener("click", (e) => {
+      if (e.target === resumeModal) closeResume();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && resumeModal.style.display === "flex") closeResume();
+    });
+
     // Medium Blog Fetching (Example with dummy data)
     const rssUrl = 'https://medium.com/feed/@fahimanizamnova96';
 

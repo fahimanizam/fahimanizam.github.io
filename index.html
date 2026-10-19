@@ -59,7 +59,7 @@
             clean design and scalable solutions.</p>
           <div class="hero-actions">
             <a href="https://drive.google.com/file/d/1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo/view?usp=sharing"
-              target="_blank" class="hero-btn primary">View Resume</a>
+              target="_blank" class="hero-btn primary" id="viewResumeBtn">View Resume</a>
             <a href="#projects" class="hero-btn">See Projects</a>
           </div>
         </div>
@@ -408,6 +408,23 @@
 
     </div>
   </section>
+
+  <!-- Resume Modal -->
+  <div id="resumeModal" class="resume-modal">
+    <div class="resume-content">
+      <div class="resume-header">
+        <h3>Resume</h3>
+        <div class="resume-actions">
+          <a href="https://drive.google.com/uc?export=download&id=1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo"
+            class="resume-download" title="Download PDF"><i class="fas fa-download"></i> Download</a>
+          <a href="https://drive.google.com/file/d/1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo/view?usp=sharing"
+            target="_blank" title="Open in new tab"><i class="fas fa-up-right-from-square"></i></a>
+          <span class="resume-close" onclick="closeResume()">✖</span>
+        </div>
+      </div>
+      <iframe id="resumeFrame" title="Resume" allow="autoplay"></iframe>
+    </div>
+  </div>
 
   <audio id="bg-music" autoplay>
     <source src="assets/music/harry_potter.mp3" type="audio/mpeg">

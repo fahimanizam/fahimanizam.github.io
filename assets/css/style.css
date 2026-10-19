@@ -701,6 +701,77 @@
         font-size: 20px;
     }
 
+    /* Resume Modal */
+    .resume-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+    }
+
+    .resume-content {
+        background: #fff;
+        width: 90%;
+        max-width: 900px;
+        height: 90vh;
+        border-radius: 18px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        animation: fadeIn 0.4s ease;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .resume-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .resume-header h3 {
+        margin: 0;
+    }
+
+    .resume-actions {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 18px;
+    }
+
+    .resume-actions a {
+        color: inherit;
+    }
+
+    .resume-actions .resume-download {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 8px;
+        background: var(--primary);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .resume-close {
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .resume-content iframe {
+        flex: 1;
+        width: 100%;
+        border: 0;
+    }
+
     /* Scroll Buttons */
     .side-wrapper {
         position: fixed;
