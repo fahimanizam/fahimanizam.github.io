@@ -33,7 +33,7 @@
         background: var(--primary);
         padding: 15px 60px;
         position: sticky;
-        top: 0;
+        top: var(--switch-h, 0px);
         z-index: 1000;
     }
 
@@ -889,7 +889,7 @@
         background: rgba(0, 0, 0, 0.6);
         justify-content: center;
         align-items: center;
-        z-index: 999;
+        z-index: 2000;
     }
 
     .blog-content {
@@ -1387,5 +1387,244 @@
         .height-group {
             flex-direction: column;
             gap: 0;
+        }
+    }
+
+    /* ================= NIGHT TOGGLE ================= */
+    .night-toggle {
+        margin-left: 10px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--accent);
+        background: transparent;
+        color: var(--accent);
+        font-family: 'Poppins', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: 0.3s;
+    }
+
+    .night-toggle:hover {
+        background: var(--accent);
+        color: #000;
+    }
+
+    @media (max-width: 768px) {
+
+        .night-toggle {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            margin: 0;
+            padding: 4px 10px;
+            font-size: 12px;
+        }
+    }
+
+    /* ================= NIGHT MODE (Hogwarts at night) ================= */
+    [data-theme="dark"] {
+        --primary: #740001;
+        --gold: #f5c542;
+        --night-bg: #0d0e1f;
+        --night-alt: #121430;
+        --night-card: #1a1c38;
+        --night-card-2: #23264a;
+        --night-border: #3a3e6b;
+        --night-text: #ece6d6;
+        --night-muted: #b3aec6;
+        --card-bg: #1a1c38;
+        --light-bg: #23264a;
+        --shelf-bg: #4a2a19;
+        color-scheme: dark;
+    }
+
+    [data-theme="dark"] body {
+        color: var(--night-text);
+        background-color: var(--night-bg);
+        /* a quiet starry sky */
+        background-image:
+            radial-gradient(1px 1px at 25px 35px, rgba(255, 255, 255, 0.8), transparent),
+            radial-gradient(1px 1px at 90px 120px, rgba(255, 255, 255, 0.6), transparent),
+            radial-gradient(1.5px 1.5px at 160px 60px, rgba(245, 197, 66, 0.7), transparent),
+            radial-gradient(1px 1px at 210px 190px, rgba(255, 255, 255, 0.5), transparent),
+            radial-gradient(1px 1px at 300px 90px, rgba(255, 255, 255, 0.7), transparent),
+            radial-gradient(1.5px 1.5px at 340px 250px, rgba(255, 255, 255, 0.6), transparent);
+        background-size: 380px 300px;
+        background-attachment: fixed;
+    }
+
+    [data-theme="dark"] .navbar {
+        background: #1c0000;
+        border-bottom: 1px solid rgba(245, 197, 66, 0.25);
+    }
+
+    /* Headings that were maroon become gold */
+    [data-theme="dark"] .title p,
+    [data-theme="dark"] .hero-greeting,
+    [data-theme="dark"] .hero-role,
+    [data-theme="dark"] .section h2,
+    [data-theme="dark"] .education-item h3,
+    [data-theme="dark"] .experience-item h3,
+    [data-theme="dark"] .vision-card h3,
+    [data-theme="dark"] .book p,
+    [data-theme="dark"] .blog-all,
+    [data-theme="dark"] .blog-read-more {
+        color: var(--gold);
+    }
+
+    [data-theme="dark"] .hero-bio,
+    [data-theme="dark"] .project-card p,
+    [data-theme="dark"] .mini-projects-header p,
+    [data-theme="dark"] .mini-project p,
+    [data-theme="dark"] .vision-card p,
+    [data-theme="dark"] .blog-card p,
+    [data-theme="dark"] .blog-date,
+    [data-theme="dark"] .education-item .duration,
+    [data-theme="dark"] .experience-item .duration {
+        color: var(--night-muted);
+    }
+
+    [data-theme="dark"] .experience-item p {
+        color: var(--night-text);
+    }
+
+    [data-theme="dark"] .hero-btn {
+        border-color: var(--night-text);
+        color: var(--night-text);
+    }
+
+    [data-theme="dark"] .hero-btn.primary {
+        background: var(--primary);
+        border-color: var(--primary);
+    }
+
+    [data-theme="dark"] .hero-btn:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: #000;
+    }
+
+    /* Cards */
+    [data-theme="dark"] .section {
+        background: var(--night-card);
+        border-color: var(--gold);
+    }
+
+    [data-theme="dark"] .section::before {
+        border-color: rgba(245, 197, 66, 0.45);
+    }
+
+    [data-theme="dark"] .divider {
+        background: var(--night-border);
+    }
+
+    [data-theme="dark"] .skill-category,
+    [data-theme="dark"] .project-card,
+    [data-theme="dark"] .book {
+        background: var(--night-card-2);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    [data-theme="dark"] .skill-tags span {
+        background: #2f3360;
+        color: var(--night-text);
+    }
+
+    [data-theme="dark"] .skill-tags span:hover {
+        background: var(--gold);
+        color: #000;
+    }
+
+    [data-theme="dark"] .vision-card {
+        background: linear-gradient(145deg, #1f2244, #2a1d3d);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Mini projects */
+    [data-theme="dark"] #mini-projects {
+        background: var(--night-alt);
+    }
+
+    [data-theme="dark"] .mini-project,
+    [data-theme="dark"] .blog-card {
+        background: var(--night-card);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    [data-theme="dark"] .mini-project input,
+    [data-theme="dark"] .mini-project textarea {
+        background: var(--night-card-2);
+        border-color: var(--night-border);
+        color: var(--night-text);
+    }
+
+    [data-theme="dark"] .mini-project input:disabled {
+        background: rgba(39, 174, 96, 0.2);
+    }
+
+    [data-theme="dark"] .mini-project button {
+        background: var(--primary);
+    }
+
+    [data-theme="dark"] .mini-project button:hover {
+        background: #9b0000;
+    }
+
+    [data-theme="dark"] .mini-project .typing-target {
+        background: var(--night-card-2);
+        color: var(--night-text);
+    }
+
+    [data-theme="dark"] .reaction-box:not(.waiting):not(.ready) {
+        background: var(--night-card-2);
+        border: 1px solid var(--night-border);
+    }
+
+    /* Modals */
+    [data-theme="dark"] .book-content,
+    [data-theme="dark"] .blog-content,
+    [data-theme="dark"] .resume-content {
+        background: var(--night-card);
+        color: var(--night-text);
+    }
+
+    [data-theme="dark"] .resume-header {
+        border-bottom-color: var(--night-border);
+    }
+
+    /* Side buttons */
+    [data-theme="dark"] .social-item,
+    [data-theme="dark"] .scroll-btn {
+        background: var(--night-card);
+        color: var(--night-text);
+        border-color: var(--gold);
+    }
+
+    [data-theme="dark"] .social-item:hover,
+    [data-theme="dark"] .scroll-btn:hover {
+        background: var(--gold);
+        color: #000;
+    }
+
+    [data-theme="dark"] .social-item .tooltip {
+        background: var(--night-card-2);
+        color: var(--night-text);
+    }
+
+    [data-theme="dark"] .footer {
+        background: #1c0000;
+        border-top: 1px solid rgba(245, 197, 66, 0.25);
+    }
+
+    /* Keep anchored sections clear of the sticky switcher bar + navbar */
+    html {
+        scroll-padding-top: 120px;
+    }
+
+    @media (max-width: 768px) {
+        html {
+            scroll-padding-top: 150px;
         }
     }

@@ -1,0 +1,80 @@
+/* ================= TEMPLATE SWITCHER (shared by both templates) ================= */
+/* A slim bar above the navbar: always visible, never covers page content */
+:root {
+    --switch-h: 40px;
+}
+
+.template-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+    height: var(--switch-h);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 12px;
+    background: #010409;
+    border-bottom: 1px solid #21262d;
+    font-family: "Poppins", "Inter", system-ui, sans-serif;
+}
+
+.template-bar-label {
+    color: #8b949e;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.template-switch {
+    display: flex;
+    gap: 2px;
+    padding: 3px;
+    border-radius: 999px;
+    background: #161b22;
+    border: 1px solid #30363d;
+}
+
+.template-switch a {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 14px;
+    border-radius: 999px;
+    color: #c9d1d9;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+}
+
+.template-switch a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.template-switch a:focus-visible {
+    outline: 2px solid #f5c542;
+    outline-offset: 2px;
+}
+
+.template-switch a[data-template="developer"].active {
+    background: #238636;
+    color: #fff;
+}
+
+.template-switch a[data-template="hogwarts"].active {
+    background: #740001;
+    color: #f5d77a;
+}
+
+@media (max-width: 480px) {
+    .template-bar-label {
+        display: none;
+    }
+
+    .template-switch a {
+        padding: 4px 12px;
+        font-size: 12.5px;
+    }
+}

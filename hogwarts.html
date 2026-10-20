@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fahima Nizam Nova | Hogwarts Edition</title>
+
+  <link rel="icon" type="image/png" href="assets/images/coffee.png">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Creepster&family=Flavors&family=Rubik+Wet+Paint&family=Patrick+Hand&family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/switcher.css">
+
+  <!-- Apply night mode before paint (saved choice, otherwise the system setting) -->
+  <script>
+    let savedTheme = null;
+    try { savedTheme = localStorage.getItem("theme"); } catch { }
+    if (savedTheme === "dark" || (!savedTheme && matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- ================= TEMPLATE SWITCHER ================= -->
+  <div class="template-bar">
+    <span class="template-bar-label">Choose a style:</span>
+    <div class="template-switch" role="group" aria-label="Choose site template">
+      <a href="index.html" data-template="developer">💻 Developer</a>
+      <a href="hogwarts.html" data-template="hogwarts" class="active" aria-current="page">🪄 Hogwarts</a>
+    </div>
+  </div>
+
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo" id="logo">
+        <img src="assets/images/hp_owl.png" alt="My animation" width="20">
+        NØVA
+      </div>
+
+      <div class="nav-menu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#mini-projects">MiniProjects</a>
+        <a href="#arcade">Arcade</a>
+        <a href="https://drive.google.com/file/d/1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo/view?usp=sharing"
+          target="_blank">Resume</a>
+        <a href="#more-about">More</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <button class="night-toggle" id="nightToggle" aria-label="Toggle night mode"></button>
+
+      <!-- <div class="nav-social">
+        <a href="https://github.com/fahimanizam" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/fahima-nizam-nova/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/fahimanizam" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div> -->
+    </div>
+  </nav>
+
+  <!-- ================= RESUME ================= -->
+  <section id="resume">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-text">
+          <span class="hero-greeting">Hi there, I'm</span>
+          <h1>Fahima Nizam Nova</h1>
+          <p class="hero-role">Full Stack Developer @ Ørsted | <span class="typing"></span></p>
+          <p class="hero-bio">Passionate about building technology that solves real-world problems, with a focus on
+            clean design and scalable solutions.</p>
+          <div class="hero-actions">
+            <a href="https://drive.google.com/file/d/1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo/view?usp=sharing"
+              target="_blank" class="hero-btn primary" id="viewResumeBtn">View Resume</a>
+            <a href="#projects" class="hero-btn">See Projects</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div>
+
+          <div class="section" id="about">
+            <h2>Hello World!</h2>
+            <p>
+              I am Nova from Bangladesh 🇧🇩 passionate about building technology that solves real-world problems,
+              continuously seek growth — not only as an engineer, but as a contributor to projects that aim to make a
+              positive difference. I am
+            </p>
+
+            <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.8; margin-top: 15px;">
+              <li>working with curiosity, precision, and purpose</li>
+              <li>focusing on clean design and scalable solutions</li>
+              <li>seeking for good user experiences</li>
+              <li>creating solutions that matter</li>
+            </ul>
+          </div>
+
+          <div class="section" id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+              <h3>Daffodil International University <span class="degree">[BASc in Computer & Information Systems]</span>
+              </h3>
+              <span class="duration">Passing Year: 2020 | CGPA: 3.84/4.00</span>
+            </div>
+            <div class="divider"></div>
+            <div class="education-item">
+              <h3>Aminur Rahman College <span class="degree">[HSC in Science]</span></h3>
+              <span class="duration">Passing Year: 2014 | CGPA: 4.10/5.00</span>
+            </div>
+            <div class="divider"></div>
+            <div class="education-item">
+              <h3>R. K. S. H. Institution <span class="degree">[SSC in Science]</span></h3>
+              <span class="duration">Passing Year: 2012 | CGPA: 5.00/5.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+
+          <div class="section" id="experience">
+            <h2>Job Experience</h2>
+
+            <div class="experience-item" data-start="2023-09-01">
+              <h3>Ørsted <span class="role">[Full Stack Developer]</span></h3>
+              <span class="duration"></span>
+              <p>Building modern web applications and exploring AI & Machine Learning technologies.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="experience-item" data-start="2022-01-01" data-end="2023-05-31">
+              <h3>Braind Station 23 <span class="role">[Full Stack Developer]</span></h3>
+              <span class="duration"></span>
+              <p>Building ERP web applications in Odoo, Python, JavaScript, and PostgreSQL.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="experience-item" data-start="2020-11-01" data-end="2021-12-31">
+              <h3>Daffodil Computers <span class="role">[Full Stack Developer]</span></h3>
+              <span class="duration"></span>
+              <p>Building ERP web applications in Odoo, Python, JavaScript, and PostgreSQL.</p>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>Hobbies</h2>
+            <div class="hobbies">
+              <span>Problem Solving</span>
+              <span>Creative Projects [DIY]</span>
+              <span>Drawing</span>
+              <span>Chess</span>
+              <span>Learning New Things</span>
+              <span>Reading Suspense Thrillers</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= SKILLS ================= -->
+      <div class="section" id="skills">
+        <h2>Skills</h2>
+
+        <div class="skills-container">
+
+          <!-- Frontend -->
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <div class="skill-tags">
+              <span>Angular</span>
+              <span>JavaScript</span>
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="skill-tags">
+              <span>Python</span>
+              <span>SQL</span>
+              <span>Odoo</span>
+              <span>PostgreSQL</span>
+            </div>
+          </div>
+
+          <!-- DevOps -->
+          <div class="skill-category">
+            <h3>DevOps</h3>
+            <div class="skill-tags">
+              <span>Docker</span>
+              <span>CI/CD</span>
+              <span>Git</span>
+            </div>
+          </div>
+
+          <!-- AI & ML -->
+          <div class="skill-category">
+            <h3>AI / ML</h3>
+            <div class="skill-tags">
+              <span>Machine Learning</span>
+              <span>Data Analysis</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= PROJECTS ================= -->
+      <div class="section" id="projects">
+        <h2>Projects</h2>
+
+        <div class="projects-container">
+
+          <div class="project-card">
+            <h3>Constructional Site</h3>
+            <p>A modern responsive website for managing construction projects, workers, and materials efficiently.
+            </p>
+            <a href="https://github.com/fahimanizam/construction_management_system.git" target="_blank"
+              class="github-btn">View on
+              GitHub</a>
+          </div>
+
+          <div class="project-card">
+            <h3>Learning Management System</h3>
+            <p>A dynamic platform for managing online courses, students, and assessments.</p>
+            <a href="https://github.com/fahimanizam/learning_management_system" target="_blank" class="github-btn">View
+              on GitHub</a>
+          </div>
+
+          <div class="project-card">
+            <h3>Blog Site</h3>
+            <p>A dynamic blog platform with post creation, editing, and responsive UI design.</p>
+            <a href="https://github.com/yourusername/blog-site" target="_blank" class="github-btn">View on
+              GitHub</a>
+          </div>
+
+          <div class="project-card">
+            <h3>Health Check</h3>
+            <p>An online pharmacy management system with inventory tracking and order management.</p>
+            <a href="https://github.com/fahimanizam/health-checks.git" target="_blank" class="github-btn">View on
+              GitHub</a>
+          </div>
+
+          <div class="project-card">
+            <h3>Customer Management System</h3>
+            <p>A CRM-style web application for managing customer records and business operations.</p>
+            <a href="https://github.com/fahimanizam/customer-management.git" target="_blank" class="github-btn">View on
+              GitHub</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= MINI PROJECTS ================= -->
+  <section id="mini-projects">
+    <div class="container">
+      <div class="mini-projects-header">
+        <h1>Mini Projects</h1>
+        <p>Interactive JavaScript utilities built for practice and usability.</p>
+      </div>
+
+      <div class="mini-projects-grid">
+
+        <!-- Age Counter -->
+        <div class="mini-project">
+          <h2>Mini Age Counter</h2>
+          <p>Calculate your exact age instantly.</p>
+          <input type="date" id="birthdate">
+          <button onclick="calculateAge()">Calculate</button>
+          <div class="result" id="result"></div>
+        </div>
+
+        <!-- Password Generator -->
+        <div class="mini-project">
+          <h2>Password Generator</h2>
+          <p>Generate a strong and secure password.</p>
+          <input type="number" id="passLength" placeholder="Length (min 4)">
+          <button onclick="generatePassword()">Generate</button>
+          <div class="result" id="passwordResult"></div>
+        </div>
+
+        <!-- BMI Calculator -->
+        <div class="mini-project">
+          <h2>BMI Calculator</h2>
+          <p>Compute BMI using height in feet & inches.</p>
+          <input type="number" id="weight" placeholder="Weight (kg)">
+          <div class="height-group">
+            <input type="number" id="heightFeet" placeholder="Feet">
+            <input type="number" id="heightInch" placeholder="Inches">
+          </div>
+          <button onclick="calculateBMI()">Calculate</button>
+          <div class="result" id="bmiResult"></div>
+        </div>
+
+        <!-- Number Guessing -->
+        <div class="mini-project">
+          <h2>Number Guessing Game</h2>
+          <p>Guess a number between 1–10.</p>
+          <input type="number" id="guessInput" min="1" max="10">
+          <button onclick="checkGuess()">Guess</button>
+          <div class="result" id="guessResult"></div>
+        </div>
+
+        <!-- Sorting Hat -->
+        <div class="mini-project">
+          <h2>The Sorting Hat 🎩</h2>
+          <p>Enter your name and let the hat decide your house.</p>
+          <input type="text" id="hatName" placeholder="Your name">
+          <button onclick="sortingHat()">Sort Me!</button>
+          <div class="result" id="hatResult"></div>
+        </div>
+
+        <!-- Typing Speed Test -->
+        <div class="mini-project">
+          <h2>Typing Speed Test</h2>
+          <p>Type the sentence below as fast as you can.</p>
+          <p class="typing-target" id="typingTarget"></p>
+          <input type="text" id="typingInput" placeholder="Start typing to begin..." autocomplete="off" oninput="checkTyping()">
+          <button onclick="resetTyping()">New Sentence</button>
+          <div class="result" id="typingResult"></div>
+        </div>
+
+        <!-- Pomodoro Timer -->
+        <div class="mini-project">
+          <h2>Pomodoro Focus Timer ☕</h2>
+          <p>25 minutes of focus, then a 5 minute coffee break.</p>
+          <div class="timer-display" id="pomoDisplay">25:00</div>
+          <div class="btn-group">
+            <button onclick="togglePomodoro()" id="pomoStartBtn">Start</button>
+            <button onclick="resetPomodoro()">Reset</button>
+          </div>
+          <div class="result" id="pomoResult">Focus session</div>
+        </div>
+
+        <!-- Reaction Time Test -->
+        <div class="mini-project">
+          <h2>Reaction Time Test</h2>
+          <p>Click the box when it turns green.</p>
+          <div class="reaction-box" id="reactionBox" onclick="reactionClick()">Click to start</div>
+          <div class="result" id="reactionResult"></div>
+        </div>
+
+        <!-- Color Palette Generator -->
+        <div class="mini-project">
+          <h2>Color Palette Generator</h2>
+          <p>Generate a palette. Click a color to copy its hex code.</p>
+          <div class="palette" id="palette"></div>
+          <button onclick="generatePalette()">Generate</button>
+          <div class="result" id="paletteResult"></div>
+        </div>
+
+        <!-- Word Counter -->
+        <div class="mini-project">
+          <h2>Word Counter</h2>
+          <p>Count words and characters and estimate reading time.</p>
+          <textarea id="wordInput" rows="4" placeholder="Paste or type your text..." oninput="countWords()"></textarea>
+          <div class="result" id="wordResult">0 words · 0 characters · 0 min read</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RETRO ARCADE ================= -->
+  <section id="arcade">
+    <div class="container">
+      <div class="mini-projects-header">
+        <h1>Retro Arcade 🕹️</h1>
+        <p>Classic-style games built from scratch with JavaScript and canvas. Take a coffee break!</p>
+      </div>
+
+      <div class="mini-projects-grid">
+
+        <div class="mini-project game-card">
+          <div class="game-icon">🐍</div>
+          <h2>Snake</h2>
+          <p>Eat, grow, and don't bite your own tail. Arrow keys / WASD or swipe.</p>
+          <button onclick="openGame('snake')">Play</button>
+        </div>
+
+        <div class="mini-project game-card">
+          <div class="game-icon">🦆</div>
+          <h2>Duck Shooting</h2>
+          <p>Hit as many flying ducks as you can in 30 seconds. Click or tap to shoot.</p>
+          <button onclick="openGame('duck')">Play</button>
+        </div>
+
+        <div class="mini-project game-card">
+          <div class="game-icon">🐛</div>
+          <h2>Bug Stomper: Ship It!</h2>
+          <p>A platformer: run, jump, stomp the bugs, collect coffee beans and reach the laptop to deploy.</p>
+          <button onclick="openGame('platformer')">Play</button>
+        </div>
+
+        <div class="mini-project game-card">
+          <div class="game-icon">🧱</div>
+          <h2>Brick Breaker</h2>
+          <p>Bounce the ball and smash every brick. Mouse, touch, or arrow keys.</p>
+          <button onclick="openGame('bricks')">Play</button>
+        </div>
+
+        <div class="mini-project game-card">
+          <div class="game-icon">🃏</div>
+          <h2>Memory Match</h2>
+          <p>Flip cards and find all 8 pairs in as few moves as possible.</p>
+          <button onclick="openGame('memory')">Play</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- More about me -->
+  <section id="more-about">
+    <div class="container">
+      <div class="title">
+        <h1>Little More About Me</h1>
+      </div>
+      <!-- ================= VISION BOARD ================= -->
+      <div class="section" id="vision">
+        <h2>Vision Board ✨</h2>
+        <div class="vision-grid">
+          <div class="vision-card">
+            <h3>🚀 Grow as an Engineer</h3>
+            <p>Write clean, reliable code and take ownership of features from idea to release.</p>
+          </div>
+          <div class="vision-card">
+            <h3>🤖 Learn AI, One Project at a Time</h3>
+            <p>Build small, practical AI projects and really understand how they work.</p>
+          </div>
+          <div class="vision-card">
+            <h3>🌏 Work with a Global Team</h3>
+            <p>Collaborate with people from around the world on products that help others.</p>
+          </div>
+          <div class="vision-card">
+            <h3>✍️ Write & Share</h3>
+            <p>Publish what I learn on my blog regularly, so it can help someone else too.</p>
+          </div>
+          <div class="vision-card">
+            <h3>🤝 Give Back</h3>
+            <p>Contribute to open source and support other learners on their journey.</p>
+          </div>
+          <div class="vision-card">
+            <h3>🌱 A Balanced, Happy Life</h3>
+            <p>Make time for health, family, books, and creative DIY projects — and enjoy the journey.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= LIBRARY ================= -->
+      <div class="section" id="library">
+        <h2>My Favorite Books 📚</h2>
+        <div class="library-grid">
+          <div class="book"
+            onclick="openBook('The Alchemist', 'assets/images/books/the_alchemist.jpg', 'A novel by Paulo Coelho about a shepherd journey.')">
+            <img src="assets/images/books/the_alchemist.jpg" alt="The Alchemist">
+            <p>The Alchemist</p>
+          </div>
+
+          <div class="book"
+            onclick="openBook('Atomic Habits', 'assets/images/books/atomic_habits.jpg', 'A self-help book by James Clear on habits.')">
+            <img src="assets/images/books/atomic_habits.jpg" alt="Atomic Habits">
+            <p>Atomic Habits</p>
+          </div>
+
+          <div class="book"
+            onclick="openBook('Harry Potter', 'assets/images/books/harry_potter.jpg', 'A fantasy series by J.K. Rowling.')">
+            <img src="assets/images/books/harry_potter.jpg" alt="Harry Potter">
+            <p>Harry Potter</p>
+          </div>
+        </div>
+
+        <div id="bookModal" class="book-modal">
+          <div class="book-content">
+            <span class="close-btn" onclick="closeBook()">✖</span>
+            <img id="bookImg" src="" alt="">
+            <h3 id="bookTitle"></h3>
+            <p id="bookReview"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Section -->
+      <div class="section" id="blog">
+        <h2>Journals</h2>
+
+        <div class="blog-grid">
+
+          <div class="blog-card" data-title="সাইবার সিকিউরিটি সচেতনতা !(Cyber Security awareness)" data-date="Oct 31, 2019" data-link="https://fahima.home.blog/2019/10/31/%e0%a6%b8%e0%a6%be%e0%a6%87%e0%a6%ac%e0%a6%be%e0%a6%b0-%e0%a6%b8%e0%a6%bf%e0%a6%95%e0%a6%bf%e0%a6%89%e0%a6%b0%e0%a6%bf%e0%a6%9f%e0%a6%bf-%e0%a6%b8%e0%a6%9a%e0%a7%87%e0%a6%a4%e0%a6%a8%e0%a6%a4%e0%a6%be/"
+            data-content="আজকে আমি একটা সেমিনারে অংশগ্রহণ করেছি সাইবার নিরাপত্তার ব্যাপারে সচেতনতা মূলক। শিক্ষার্থীদের উদ্দেশ্যে এটা ছিলো ড্যাফডিল ইন্টারন্যাশনাল ইউনিভার্সিটি আয়োজিত একটি সচেতনতা মূলক সেমিনার যেখানে আমরা অনেক অজানা তথ্য পেয়েছি। কিভাবে হ্যাকারদের কবল থেকে রক্ষা পাওয়া যেতে পারে সে বিষয়ে কিছু ধারণা পেয়েছি।">
+            <span class="blog-date">Oct 31, 2019</span>
+            <h3>সাইবার সিকিউরিটি সচেতনতা !(Cyber Security awareness)</h3>
+            <p>আজকে আমি একটা সেমিনারে অংশগ্রহণ করেছি সাইবার নিরাপত্তার ব্যাপারে সচেতনতা মূলক। শিক্ষার্থীদের উদ্দেশ্যে এটা ছিলো ড্যাফডিল ইন্টারন্যাশনাল ইউনিভার্সিটি আয়োজিত একটি সচেতনতা মূলক সেমিনার যেখানে আমরা অনেক অজানা তথ্য পেয়েছি। কিভাবে হ্যাকারদের কবল থেকে রক্ষা পাওয়া যেতে পারে সে বিষয়ে কিছু ধারণা পেয়েছি।</p>
+          </div>
+
+          <div class="blog-card" data-title="ICT Carnival 2019 DIU" data-date="Oct 26, 2019" data-link="https://fahima.home.blog/2019/10/26/ict-carnival-2019-diu/"
+            data-content="Ict carnival is celebrated by the authority of Daffodil international University. They give the student a great opportunity to show their projects and thesis. The authority of Daffodil university beliefs to give focus on the talents of students and creat opportunity for them.">
+            <span class="blog-date">Oct 26, 2019</span>
+            <h3>ICT Carnival 2019 DIU</h3>
+            <p>Ict carnival is celebrated by the authority of Daffodil international University. They give the student a great opportunity to show their projects and thesis. The authority of Daffodil university beliefs to give focus on the talents of students and creat opportunity for them.</p>
+          </div>
+
+          <div class="blog-card" data-title="Recently i know the term thesis!" data-date="Oct 20, 2019" data-link="https://fahima.home.blog/2019/10/20/recently-i-know-the-term-thesis/"
+            data-content="In my university, the alumni made them fit for job by creating their own projects. I also have the intention to create a dynamic project as it is compulsory. But i have learnt from my teacher that if i want to take higher study thesis is necessary.">
+            <span class="blog-date">Oct 20, 2019</span>
+            <h3>Recently i know the term thesis!</h3>
+            <p>In my university, the alumni made them fit for job by creating their own projects. I also have the intention to create a dynamic project as it is compulsory. But i have learnt from my teacher that if i want to take higher study thesis is necessary.</p>
+          </div>
+
+          <div class="blog-card" data-title="The celebration of our CIS day" data-date="Oct 14, 2019" data-link="https://fahima.home.blog/2019/10/14/the-celebration-of-our-cis-day/"
+            data-content="We have observed our CIS day in 14 October, 2019. It was a nice experience. We have observed the speech of our chairman sir Md. Sabur khan. He told us many valuable points that is important to be successful.">
+            <span class="blog-date">Oct 14, 2019</span>
+            <h3>The celebration of our CIS day</h3>
+            <p>We have observed our CIS day in 14 October, 2019. It was a nice experience. We have observed the speech of our chairman sir Md. Sabur khan. He told us many valuable points that is important to be successful.</p>
+          </div>
+
+        </div>
+
+        <a href="https://fahima.home.blog/" target="_blank" class="blog-all">Read all posts on my blog →</a>
+      </div>
+
+      <!-- Modal -->
+      <div id="blogModal" class="blog-modal">
+        <div class="blog-content">
+          <span class="close-btn" onclick="closeBook()">✖</span>
+          <span id="modalDate" class="blog-date"></span>
+          <h3 id="modalTitle"></h3>
+          <p id="modalText"></p>
+          <a id="modalLink" class="blog-read-more" href="#" target="_blank">Read full post →</a>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+  </section>
+
+  <!-- Game Modal -->
+  <div id="gameModal" class="game-modal">
+    <div class="game-content">
+      <div class="game-header">
+        <h3 id="gameTitle">Game</h3>
+        <span class="game-score" id="gameScore"></span>
+        <button class="game-close" onclick="closeGame()" title="Close (Esc)">&times;</button>
+      </div>
+      <canvas id="gameCanvas" width="480" height="320"></canvas>
+      <p class="game-help" id="gameHelp"></p>
+      <div class="touch-controls" id="touchControls">
+        <button data-key="ArrowLeft">◀</button>
+        <button data-key="ArrowUp">▲</button>
+        <button data-key="ArrowDown">▼</button>
+        <button data-key="ArrowRight">▶</button>
+        <button data-key="Space" class="touch-action">A</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resume Modal -->
+  <div id="resumeModal" class="resume-modal">
+    <div class="resume-content">
+      <div class="resume-header">
+        <h3>Resume</h3>
+        <div class="resume-actions">
+          <a href="https://drive.google.com/uc?export=download&id=1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo"
+            class="resume-download" title="Download PDF"><i class="fas fa-download"></i> Download</a>
+          <a href="https://drive.google.com/file/d/1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo/view?usp=sharing"
+            target="_blank" title="Open in new tab"><i class="fas fa-up-right-from-square"></i></a>
+          <span class="resume-close" onclick="closeResume()">✖</span>
+        </div>
+      </div>
+      <iframe id="resumeFrame" title="Resume" allow="autoplay"></iframe>
+    </div>
+  </div>
+
+  <audio id="bg-music" autoplay>
+    <source src="assets/music/harry_potter.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Social + Scroll Wrapper -->
+  <div class="side-wrapper">
+
+    <!-- Social Bar -->
+    <div class="social-bar">
+      <a href="https://github.com/fahimanizam" target="_blank" class="social-item"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/fahima-nizam-nova/" target="_blank" class="social-item"><i
+          class="fab fa-linkedin"></i></a>
+      <a href="mailto:fahimanizamnova@gmail.com" title="Click me to email" class="social-item gmail">
+        <i class="fas fa-envelope"></i>
+        <span class="tooltip">fahimanizamnova@gmail.com</span>
+      </a>
+    </div>
+
+
+    <!-- Scroll Buttons -->
+    <div class="scroll-group">
+      <button id="scrollUp" class="scroll-btn">↑</button>
+      <button id="scrollDown" class="scroll-btn">↓</button>
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="footer" id="contact">
+      <p>© 2025 Fahima Nizam Nova | Made with ☕</p>
+    </div>
+  </footer>
+
+  <!-- ================= JS ================= -->
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/games.js"></script>
+  <script src="assets/js/switcher.js"></script>
+
+</body>
+
+</html>

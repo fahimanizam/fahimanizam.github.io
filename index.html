@@ -4,607 +4,749 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fahima Nizam Nova | Portfolio</title>
+  <title>Fahima Nizam Nova | Developer</title>
+  <meta name="description"
+    content="Fahima Nizam Nova is a full stack developer at Ørsted with 5+ years of experience building web applications with Python, Odoo, JavaScript, Angular and PostgreSQL.">
+  <meta name="author" content="Fahima Nizam Nova">
+  <meta name="theme-color" content="#0d1117">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fahima Nizam Nova | Full Stack Developer">
+  <meta property="og:description"
+    content="Full stack developer building reliable web applications. Currently at Ørsted, exploring AI & machine learning.">
+  <meta property="og:url" content="https://fahimanizam.github.io/">
 
   <link rel="icon" type="image/png" href="assets/images/coffee.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Creepster&family=Flavors&family=Rubik+Wet+Paint&family=Patrick+Hand&family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
-
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/pro.css">
+  <link rel="stylesheet" href="assets/css/switcher.css">
 
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Open the Hogwarts template if the visitor chose it before -->
+  <script>
+    try {
+      if (localStorage.getItem("template") === "hogwarts") location.replace("hogwarts.html");
+    } catch { }
+  </script>
+
+  <!-- Apply saved theme before paint to avoid a flash (dark terminal look by default) -->
+  <script>
+    let savedTheme = null;
+    try { savedTheme = localStorage.getItem("theme"); } catch { }
+    document.documentElement.setAttribute("data-theme", savedTheme || "dark");
+  </script>
 </head>
 
 <body>
 
-  <!-- ================= NAVBAR ================= -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo" id="logo">
-        <img src="assets/images/hp_owl.png" alt="My animation" width="20">
-        NØVA
-      </div>
-
-      <div class="nav-menu">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#mini-projects">MiniProjects</a>
-        <a href="#arcade">Arcade</a>
-        <a href="https://drive.google.com/file/d/1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo/view?usp=sharing"
-          target="_blank">Resume</a>
-        <a href="#more-about">More</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-      <!-- <div class="nav-social">
-        <a href="https://github.com/fahimanizam" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/fahima-nizam-nova/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.facebook.com/fahimanizam" target="_blank"><i class="fab fa-facebook"></i></a>
-      </div> -->
-    </div>
-  </nav>
-
-  <!-- ================= RESUME ================= -->
-  <section id="resume">
-    <div class="container">
-      <div class="hero">
-        <div class="hero-text">
-          <span class="hero-greeting">Hi there, I'm</span>
-          <h1>Fahima Nizam Nova</h1>
-          <p class="hero-role">Full Stack Developer @ Ørsted | <span class="typing"></span></p>
-          <p class="hero-bio">Passionate about building technology that solves real-world problems, with a focus on
-            clean design and scalable solutions.</p>
-          <div class="hero-actions">
-            <a href="https://drive.google.com/file/d/1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo/view?usp=sharing"
-              target="_blank" class="hero-btn primary" id="viewResumeBtn">View Resume</a>
-            <a href="#projects" class="hero-btn">See Projects</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div>
-
-          <div class="section" id="about">
-            <h2>Hello World!</h2>
-            <p>
-              I am Nova from Bangladesh 🇧🇩 passionate about building technology that solves real-world problems,
-              continuously seek growth — not only as an engineer, but as a contributor to projects that aim to make a
-              positive difference. I am
-            </p>
-
-            <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.8; margin-top: 15px;">
-              <li>working with curiosity, precision, and purpose</li>
-              <li>focusing on clean design and scalable solutions</li>
-              <li>seeking for good user experiences</li>
-              <li>creating solutions that matter</li>
-            </ul>
-          </div>
-
-          <div class="section" id="education">
-            <h2>Education</h2>
-            <div class="education-item">
-              <h3>Daffodil International University <span class="degree">[BASc in Computer & Information Systems]</span>
-              </h3>
-              <span class="duration">Passing Year: 2020 | CGPA: 3.84/4.00</span>
-            </div>
-            <div class="divider"></div>
-            <div class="education-item">
-              <h3>Aminur Rahman College <span class="degree">[HSC in Science]</span></h3>
-              <span class="duration">Passing Year: 2014 | CGPA: 4.10/5.00</span>
-            </div>
-            <div class="divider"></div>
-            <div class="education-item">
-              <h3>R. K. S. H. Institution <span class="degree">[SSC in Science]</span></h3>
-              <span class="duration">Passing Year: 2012 | CGPA: 5.00/5.00</span>
-            </div>
-          </div>
-        </div>
-
-        <div>
-
-          <div class="section" id="experience">
-            <h2>Job Experience</h2>
-
-            <div class="experience-item" data-start="2023-09-01">
-              <h3>Ørsted <span class="role">[Full Stack Developer]</span></h3>
-              <span class="duration"></span>
-              <p>Building modern web applications and exploring AI & Machine Learning technologies.</p>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="experience-item" data-start="2022-01-01" data-end="2023-05-31">
-              <h3>Braind Station 23 <span class="role">[Full Stack Developer]</span></h3>
-              <span class="duration"></span>
-              <p>Building ERP web applications in Odoo, Python, JavaScript, and PostgreSQL.</p>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="experience-item" data-start="2020-11-01" data-end="2021-12-31">
-              <h3>Daffodil Computers <span class="role">[Full Stack Developer]</span></h3>
-              <span class="duration"></span>
-              <p>Building ERP web applications in Odoo, Python, JavaScript, and PostgreSQL.</p>
-            </div>
-          </div>
-
-          <div class="section">
-            <h2>Hobbies</h2>
-            <div class="hobbies">
-              <span>Problem Solving</span>
-              <span>Creative Projects [DIY]</span>
-              <span>Drawing</span>
-              <span>Chess</span>
-              <span>Learning New Things</span>
-              <span>Reading Suspense Thrillers</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ================= SKILLS ================= -->
-      <div class="section" id="skills">
-        <h2>Skills</h2>
-
-        <div class="skills-container">
-
-          <!-- Frontend -->
-          <div class="skill-category">
-            <h3>Frontend</h3>
-            <div class="skill-tags">
-              <span>Angular</span>
-              <span>JavaScript</span>
-              <span>HTML</span>
-              <span>CSS</span>
-            </div>
-          </div>
-
-          <!-- Backend -->
-          <div class="skill-category">
-            <h3>Backend</h3>
-            <div class="skill-tags">
-              <span>Python</span>
-              <span>SQL</span>
-              <span>Odoo</span>
-              <span>PostgreSQL</span>
-            </div>
-          </div>
-
-          <!-- DevOps -->
-          <div class="skill-category">
-            <h3>DevOps</h3>
-            <div class="skill-tags">
-              <span>Docker</span>
-              <span>CI/CD</span>
-              <span>Git</span>
-            </div>
-          </div>
-
-          <!-- AI & ML -->
-          <div class="skill-category">
-            <h3>AI / ML</h3>
-            <div class="skill-tags">
-              <span>Machine Learning</span>
-              <span>Data Analysis</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ================= PROJECTS ================= -->
-      <div class="section" id="projects">
-        <h2>Projects</h2>
-
-        <div class="projects-container">
-
-          <div class="project-card">
-            <h3>Constructional Site</h3>
-            <p>A modern responsive website for managing construction projects, workers, and materials efficiently.
-            </p>
-            <a href="https://github.com/fahimanizam/construction_management_system.git" target="_blank"
-              class="github-btn">View on
-              GitHub</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Learning Management System</h3>
-            <p>A dynamic platform for managing online courses, students, and assessments.</p>
-            <a href="https://github.com/fahimanizam/learning_management_system" target="_blank" class="github-btn">View
-              on GitHub</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Blog Site</h3>
-            <p>A dynamic blog platform with post creation, editing, and responsive UI design.</p>
-            <a href="https://github.com/yourusername/blog-site" target="_blank" class="github-btn">View on
-              GitHub</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Health Check</h3>
-            <p>An online pharmacy management system with inventory tracking and order management.</p>
-            <a href="https://github.com/fahimanizam/health-checks.git" target="_blank" class="github-btn">View on
-              GitHub</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Customer Management System</h3>
-            <p>A CRM-style web application for managing customer records and business operations.</p>
-            <a href="https://github.com/fahimanizam/customer-management.git" target="_blank" class="github-btn">View on
-              GitHub</a>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= MINI PROJECTS ================= -->
-  <section id="mini-projects">
-    <div class="container">
-      <div class="mini-projects-header">
-        <h1>Mini Projects</h1>
-        <p>Interactive JavaScript utilities built for practice and usability.</p>
-      </div>
-
-      <div class="mini-projects-grid">
-
-        <!-- Age Counter -->
-        <div class="mini-project">
-          <h2>Mini Age Counter</h2>
-          <p>Calculate your exact age instantly.</p>
-          <input type="date" id="birthdate">
-          <button onclick="calculateAge()">Calculate</button>
-          <div class="result" id="result"></div>
-        </div>
-
-        <!-- Password Generator -->
-        <div class="mini-project">
-          <h2>Password Generator</h2>
-          <p>Generate a strong and secure password.</p>
-          <input type="number" id="passLength" placeholder="Length (min 4)">
-          <button onclick="generatePassword()">Generate</button>
-          <div class="result" id="passwordResult"></div>
-        </div>
-
-        <!-- BMI Calculator -->
-        <div class="mini-project">
-          <h2>BMI Calculator</h2>
-          <p>Compute BMI using height in feet & inches.</p>
-          <input type="number" id="weight" placeholder="Weight (kg)">
-          <div class="height-group">
-            <input type="number" id="heightFeet" placeholder="Feet">
-            <input type="number" id="heightInch" placeholder="Inches">
-          </div>
-          <button onclick="calculateBMI()">Calculate</button>
-          <div class="result" id="bmiResult"></div>
-        </div>
-
-        <!-- Number Guessing -->
-        <div class="mini-project">
-          <h2>Number Guessing Game</h2>
-          <p>Guess a number between 1–10.</p>
-          <input type="number" id="guessInput" min="1" max="10">
-          <button onclick="checkGuess()">Guess</button>
-          <div class="result" id="guessResult"></div>
-        </div>
-
-        <!-- Sorting Hat -->
-        <div class="mini-project">
-          <h2>The Sorting Hat 🎩</h2>
-          <p>Enter your name and let the hat decide your house.</p>
-          <input type="text" id="hatName" placeholder="Your name">
-          <button onclick="sortingHat()">Sort Me!</button>
-          <div class="result" id="hatResult"></div>
-        </div>
-
-        <!-- Typing Speed Test -->
-        <div class="mini-project">
-          <h2>Typing Speed Test</h2>
-          <p>Type the sentence below as fast as you can.</p>
-          <p class="typing-target" id="typingTarget"></p>
-          <input type="text" id="typingInput" placeholder="Start typing to begin..." autocomplete="off" oninput="checkTyping()">
-          <button onclick="resetTyping()">New Sentence</button>
-          <div class="result" id="typingResult"></div>
-        </div>
-
-        <!-- Pomodoro Timer -->
-        <div class="mini-project">
-          <h2>Pomodoro Focus Timer ☕</h2>
-          <p>25 minutes of focus, then a 5 minute coffee break.</p>
-          <div class="timer-display" id="pomoDisplay">25:00</div>
-          <div class="btn-group">
-            <button onclick="togglePomodoro()" id="pomoStartBtn">Start</button>
-            <button onclick="resetPomodoro()">Reset</button>
-          </div>
-          <div class="result" id="pomoResult">Focus session</div>
-        </div>
-
-        <!-- Reaction Time Test -->
-        <div class="mini-project">
-          <h2>Reaction Time Test</h2>
-          <p>Click the box when it turns green.</p>
-          <div class="reaction-box" id="reactionBox" onclick="reactionClick()">Click to start</div>
-          <div class="result" id="reactionResult"></div>
-        </div>
-
-        <!-- Color Palette Generator -->
-        <div class="mini-project">
-          <h2>Color Palette Generator</h2>
-          <p>Generate a palette. Click a color to copy its hex code.</p>
-          <div class="palette" id="palette"></div>
-          <button onclick="generatePalette()">Generate</button>
-          <div class="result" id="paletteResult"></div>
-        </div>
-
-        <!-- Word Counter -->
-        <div class="mini-project">
-          <h2>Word Counter</h2>
-          <p>Count words and characters and estimate reading time.</p>
-          <textarea id="wordInput" rows="4" placeholder="Paste or type your text..." oninput="countWords()"></textarea>
-          <div class="result" id="wordResult">0 words · 0 characters · 0 min read</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= RETRO ARCADE ================= -->
-  <section id="arcade">
-    <div class="container">
-      <div class="mini-projects-header">
-        <h1>Retro Arcade 🕹️</h1>
-        <p>Classic-style games built from scratch with JavaScript and canvas. Take a coffee break!</p>
-      </div>
-
-      <div class="mini-projects-grid">
-
-        <div class="mini-project game-card">
-          <div class="game-icon">🐍</div>
-          <h2>Snake</h2>
-          <p>Eat, grow, and don't bite your own tail. Arrow keys / WASD or swipe.</p>
-          <button onclick="openGame('snake')">Play</button>
-        </div>
-
-        <div class="mini-project game-card">
-          <div class="game-icon">🦆</div>
-          <h2>Duck Shooting</h2>
-          <p>Hit as many flying ducks as you can in 30 seconds. Click or tap to shoot.</p>
-          <button onclick="openGame('duck')">Play</button>
-        </div>
-
-        <div class="mini-project game-card">
-          <div class="game-icon">🐛</div>
-          <h2>Bug Stomper: Ship It!</h2>
-          <p>A platformer: run, jump, stomp the bugs, collect coffee beans and reach the laptop to deploy.</p>
-          <button onclick="openGame('platformer')">Play</button>
-        </div>
-
-        <div class="mini-project game-card">
-          <div class="game-icon">🧱</div>
-          <h2>Brick Breaker</h2>
-          <p>Bounce the ball and smash every brick. Mouse, touch, or arrow keys.</p>
-          <button onclick="openGame('bricks')">Play</button>
-        </div>
-
-        <div class="mini-project game-card">
-          <div class="game-icon">🃏</div>
-          <h2>Memory Match</h2>
-          <p>Flip cards and find all 8 pairs in as few moves as possible.</p>
-          <button onclick="openGame('memory')">Play</button>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- More about me -->
-  <section id="more-about">
-    <div class="container">
-      <div class="title">
-        <h1>Little More About Me</h1>
-      </div>
-      <!-- ================= VISION BOARD ================= -->
-      <div class="section" id="vision">
-        <h2>Vision Board ✨</h2>
-        <div class="vision-grid">
-          <div class="vision-card">
-            <h3>🚀 Grow as an Engineer</h3>
-            <p>Write clean, reliable code and take ownership of features from idea to release.</p>
-          </div>
-          <div class="vision-card">
-            <h3>🤖 Learn AI, One Project at a Time</h3>
-            <p>Build small, practical AI projects and really understand how they work.</p>
-          </div>
-          <div class="vision-card">
-            <h3>🌏 Work with a Global Team</h3>
-            <p>Collaborate with people from around the world on products that help others.</p>
-          </div>
-          <div class="vision-card">
-            <h3>✍️ Write & Share</h3>
-            <p>Publish what I learn on my blog regularly, so it can help someone else too.</p>
-          </div>
-          <div class="vision-card">
-            <h3>🤝 Give Back</h3>
-            <p>Contribute to open source and support other learners on their journey.</p>
-          </div>
-          <div class="vision-card">
-            <h3>🌱 A Balanced, Happy Life</h3>
-            <p>Make time for health, family, books, and creative DIY projects — and enjoy the journey.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ================= LIBRARY ================= -->
-      <div class="section" id="library">
-        <h2>My Favorite Books 📚</h2>
-        <div class="library-grid">
-          <div class="book"
-            onclick="openBook('The Alchemist', 'assets/images/books/the_alchemist.jpg', 'A novel by Paulo Coelho about a shepherd journey.')">
-            <img src="assets/images/books/the_alchemist.jpg" alt="The Alchemist">
-            <p>The Alchemist</p>
-          </div>
-
-          <div class="book"
-            onclick="openBook('Atomic Habits', 'assets/images/atomic_habits.jpg', 'A self-help book by James Clear on habits.')">
-            <img src="assets/images/books/atomic_habits.jpg" alt="Atomic Habits">
-            <p>Atomic Habits</p>
-          </div>
-
-          <div class="book"
-            onclick="openBook('Harry Potter', 'assets/images/books/harry_potter.jpg', 'A fantasy series by J.K. Rowling.')">
-            <img src="assets/images/books/harry_potter.jpg" alt="Harry Potter">
-            <p>Harry Potter</p>
-          </div>
-        </div>
-
-        <div id="bookModal" class="book-modal">
-          <div class="book-content">
-            <span class="close-btn" onclick="closeBook()">✖</span>
-            <img id="bookImg" src="" alt="">
-            <h3 id="bookTitle"></h3>
-            <p id="bookReview"></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Blog Section -->
-      <div class="section" id="blog">
-        <h2>Journals</h2>
-
-        <div class="blog-grid">
-
-          <div class="blog-card" data-title="সাইবার সিকিউরিটি সচেতনতা !(Cyber Security awareness)" data-date="Oct 31, 2019" data-link="https://fahima.home.blog/2019/10/31/%e0%a6%b8%e0%a6%be%e0%a6%87%e0%a6%ac%e0%a6%be%e0%a6%b0-%e0%a6%b8%e0%a6%bf%e0%a6%95%e0%a6%bf%e0%a6%89%e0%a6%b0%e0%a6%bf%e0%a6%9f%e0%a6%bf-%e0%a6%b8%e0%a6%9a%e0%a7%87%e0%a6%a4%e0%a6%a8%e0%a6%a4%e0%a6%be/"
-            data-content="আজকে আমি একটা সেমিনারে অংশগ্রহণ করেছি সাইবার নিরাপত্তার ব্যাপারে সচেতনতা মূলক। শিক্ষার্থীদের উদ্দেশ্যে এটা ছিলো ড্যাফডিল ইন্টারন্যাশনাল ইউনিভার্সিটি আয়োজিত একটি সচেতনতা মূলক সেমিনার যেখানে আমরা অনেক অজানা তথ্য পেয়েছি। কিভাবে হ্যাকারদের কবল থেকে রক্ষা পাওয়া যেতে পারে সে বিষয়ে কিছু ধারণা পেয়েছি।">
-            <span class="blog-date">Oct 31, 2019</span>
-            <h3>সাইবার সিকিউরিটি সচেতনতা !(Cyber Security awareness)</h3>
-            <p>আজকে আমি একটা সেমিনারে অংশগ্রহণ করেছি সাইবার নিরাপত্তার ব্যাপারে সচেতনতা মূলক। শিক্ষার্থীদের উদ্দেশ্যে এটা ছিলো ড্যাফডিল ইন্টারন্যাশনাল ইউনিভার্সিটি আয়োজিত একটি সচেতনতা মূলক সেমিনার যেখানে আমরা অনেক অজানা তথ্য পেয়েছি। কিভাবে হ্যাকারদের কবল থেকে রক্ষা পাওয়া যেতে পারে সে বিষয়ে কিছু ধারণা পেয়েছি।</p>
-          </div>
-
-          <div class="blog-card" data-title="ICT Carnival 2019 DIU" data-date="Oct 26, 2019" data-link="https://fahima.home.blog/2019/10/26/ict-carnival-2019-diu/"
-            data-content="Ict carnival is celebrated by the authority of Daffodil international University. They give the student a great opportunity to show their projects and thesis. The authority of Daffodil university beliefs to give focus on the talents of students and creat opportunity for them.">
-            <span class="blog-date">Oct 26, 2019</span>
-            <h3>ICT Carnival 2019 DIU</h3>
-            <p>Ict carnival is celebrated by the authority of Daffodil international University. They give the student a great opportunity to show their projects and thesis. The authority of Daffodil university beliefs to give focus on the talents of students and creat opportunity for them.</p>
-          </div>
-
-          <div class="blog-card" data-title="Recently i know the term thesis!" data-date="Oct 20, 2019" data-link="https://fahima.home.blog/2019/10/20/recently-i-know-the-term-thesis/"
-            data-content="In my university, the alumni made them fit for job by creating their own projects. I also have the intention to create a dynamic project as it is compulsory. But i have learnt from my teacher that if i want to take higher study thesis is necessary.">
-            <span class="blog-date">Oct 20, 2019</span>
-            <h3>Recently i know the term thesis!</h3>
-            <p>In my university, the alumni made them fit for job by creating their own projects. I also have the intention to create a dynamic project as it is compulsory. But i have learnt from my teacher that if i want to take higher study thesis is necessary.</p>
-          </div>
-
-          <div class="blog-card" data-title="The celebration of our CIS day" data-date="Oct 14, 2019" data-link="https://fahima.home.blog/2019/10/14/the-celebration-of-our-cis-day/"
-            data-content="We have observed our CIS day in 14 October, 2019. It was a nice experience. We have observed the speech of our chairman sir Md. Sabur khan. He told us many valuable points that is important to be successful.">
-            <span class="blog-date">Oct 14, 2019</span>
-            <h3>The celebration of our CIS day</h3>
-            <p>We have observed our CIS day in 14 October, 2019. It was a nice experience. We have observed the speech of our chairman sir Md. Sabur khan. He told us many valuable points that is important to be successful.</p>
-          </div>
-
-        </div>
-
-        <a href="https://fahima.home.blog/" target="_blank" class="blog-all">Read all posts on my blog →</a>
-      </div>
-
-      <!-- Modal -->
-      <div id="blogModal" class="blog-modal">
-        <div class="blog-content">
-          <span class="close-btn" onclick="closeBook()">✖</span>
-          <span id="modalDate" class="blog-date"></span>
-          <h3 id="modalTitle"></h3>
-          <p id="modalText"></p>
-          <a id="modalLink" class="blog-read-more" href="#" target="_blank">Read full post →</a>
-        </div>
-      </div>
-
-    </div>
-
-    </div>
-  </section>
-
-  <!-- Game Modal -->
-  <div id="gameModal" class="game-modal">
-    <div class="game-content">
-      <div class="game-header">
-        <h3 id="gameTitle">Game</h3>
-        <span class="game-score" id="gameScore"></span>
-        <button class="game-close" onclick="closeGame()" title="Close (Esc)">&times;</button>
-      </div>
-      <canvas id="gameCanvas" width="480" height="320"></canvas>
-      <p class="game-help" id="gameHelp"></p>
-      <div class="touch-controls" id="touchControls">
-        <button data-key="ArrowLeft">◀</button>
-        <button data-key="ArrowUp">▲</button>
-        <button data-key="ArrowDown">▼</button>
-        <button data-key="ArrowRight">▶</button>
-        <button data-key="Space" class="touch-action">A</button>
-      </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= TEMPLATE SWITCHER ================= -->
+  <div class="template-bar">
+    <span class="template-bar-label">Choose a style:</span>
+    <div class="template-switch" role="group" aria-label="Choose site template">
+      <a href="index.html" data-template="developer" class="active" aria-current="page">💻 Developer</a>
+      <a href="hogwarts.html" data-template="hogwarts">🪄 Hogwarts</a>
     </div>
   </div>
 
-  <!-- Resume Modal -->
-  <div id="resumeModal" class="resume-modal">
-    <div class="resume-content">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar" id="navbar">
+    <nav class="container nav-inner" aria-label="Main">
+      <a href="#top" class="logo" aria-label="Back to top"><span>&gt;</span> nova<span class="blink">_</span></a>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#playground">Playground</a>
+        <a href="#beyond">Beyond Code</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="https://drive.google.com/file/d/1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo/view?usp=sharing" target="_blank"
+          rel="noopener" class="btn btn-small btn-primary nav-resume" data-resume>Resume</a>
+        <button class="icon-btn nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow mono-eyebrow"><span class="status-dot"></span> ~/nova $ Full Stack Developer @ Ørsted</p>
+          <h1>Hi, I'm <span class="accent">Fahima Nizam Nova</span>.</h1>
+          <p class="hero-lead">
+            I build reliable, well-designed web applications, from ERP systems in Python and Odoo to modern
+            web products. Currently exploring AI and machine learning.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://drive.google.com/file/d/1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo/view?usp=sharing"
+              target="_blank" rel="noopener" class="btn btn-primary" data-resume>
+              <i class="fas fa-file-lines"></i> View Resume
+            </a>
+            <a href="#contact" class="btn btn-outline">Get in Touch</a>
+          </div>
+
+          <div class="hero-social">
+            <a href="https://github.com/fahimanizam" target="_blank" rel="noopener" aria-label="GitHub"><i
+                class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/fahima-nizam-nova/" target="_blank" rel="noopener"
+              aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:fahimanizamnova@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+
+          <dl class="hero-stats">
+            <div>
+              <dt><span id="yearsExp">5</span>+</dt>
+              <dd>Years of experience</dd>
+            </div>
+            <div>
+              <dt>3</dt>
+              <dd>Companies</dd>
+            </div>
+            <div>
+              <dt>3.84</dt>
+              <dd>CGPA, BASc in CIS</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="code-card">
+            <div class="code-card-bar">
+              <span></span><span></span><span></span>
+              <em>nova.js</em>
+            </div>
+<pre><code><span class="c-key">const</span> nova = {
+  role: <span class="c-str">"Full Stack Developer"</span>,
+  company: <span class="c-str">"Ørsted"</span>,
+  from: <span class="c-str">"Bangladesh 🇧🇩"</span>,
+  stack: [<span class="c-str">"Python"</span>, <span class="c-str">"Odoo"</span>, <span class="c-str">"Angular"</span>, <span class="c-str">"PostgreSQL"</span>],
+  learning: <span class="c-str">"AI / ML"</span>,
+  fuel: <span class="c-str">"☕"</span>,
+};
+
+nova.<span class="c-fn">build</span>(<span class="c-str">"things that matter"</span>);<span class="cursor"></span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">01 · About</p>
+          <h2>A bit about me</h2>
+        </div>
+
+        <div class="about-grid reveal">
+          <div class="about-text">
+            <p>
+              I'm Nova, a full stack developer from Bangladesh 🇧🇩. I started out building ERP solutions with
+              Odoo, Python, JavaScript and PostgreSQL, and today I build modern web applications at
+              <strong>Ørsted</strong>.
+            </p>
+            <p>
+              I like turning complex requirements into simple, dependable software. I keep growing as an
+              engineer, and I like contributing to projects that make a positive difference.
+            </p>
+
+            <h3 class="subhead">Outside of work</h3>
+            <div class="chips">
+              <span>Problem solving</span>
+              <span>DIY projects</span>
+              <span>Drawing</span>
+              <span>Chess</span>
+              <span>Suspense thrillers</span>
+              <span>Learning new things</span>
+            </div>
+          </div>
+
+          <ul class="values">
+            <li>
+              <i class="fas fa-magnifying-glass"></i>
+              <div>
+                <h3>Curious & precise</h3>
+                <p>I work with curiosity, attention to detail, and purpose.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-layer-group"></i>
+              <div>
+                <h3>Clean & scalable</h3>
+                <p>I build maintainable code and architecture that can grow.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-user-check"></i>
+              <div>
+                <h3>User focused</h3>
+                <p>I aim for experiences that feel simple and effortless.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-bullseye"></i>
+              <div>
+                <h3>Impact driven</h3>
+                <p>I build solutions that solve real problems.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE & EDUCATION ================= -->
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">02 · Experience</p>
+          <h2>Where I've worked</h2>
+        </div>
+
+        <ol class="timeline reveal">
+          <li class="experience-item" data-start="2023-09-01">
+            <div class="timeline-meta">
+              <span class="duration"></span>
+            </div>
+            <div class="timeline-body">
+              <h3>Full Stack Developer <span class="at">@ Ørsted</span></h3>
+              <p>Building modern web applications and exploring AI & machine learning technologies.</p>
+            </div>
+          </li>
+
+          <li class="experience-item" data-start="2022-01-01" data-end="2023-05-31">
+            <div class="timeline-meta">
+              <span class="duration"></span>
+            </div>
+            <div class="timeline-body">
+              <h3>Full Stack Developer <span class="at">@ Brain Station 23</span></h3>
+              <p>Built ERP web applications on Odoo.</p>
+              <div class="tags"><span>Odoo</span><span>Python</span><span>JavaScript</span><span>PostgreSQL</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="experience-item" data-start="2020-11-01" data-end="2021-12-31">
+            <div class="timeline-meta">
+              <span class="duration"></span>
+            </div>
+            <div class="timeline-body">
+              <h3>Full Stack Developer <span class="at">@ Daffodil Computers</span></h3>
+              <p>Built ERP web applications on Odoo.</p>
+              <div class="tags"><span>Odoo</span><span>Python</span><span>JavaScript</span><span>PostgreSQL</span>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <h3 class="block-title" id="education">Education</h3>
+        <div class="edu-grid reveal">
+          <article class="card edu-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h4>BASc in Computer & Information Systems</h4>
+            <p>Daffodil International University</p>
+            <span class="meta">2020 · CGPA 3.84 / 4.00</span>
+          </article>
+          <article class="card edu-card">
+            <i class="fas fa-flask"></i>
+            <h4>HSC in Science</h4>
+            <p>Aminur Rahman College</p>
+            <span class="meta">2014 · GPA 4.10 / 5.00</span>
+          </article>
+          <article class="card edu-card">
+            <i class="fas fa-school"></i>
+            <h4>SSC in Science</h4>
+            <p>R. K. S. H. Institution</p>
+            <span class="meta">2012 · GPA 5.00 / 5.00</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">03 · Skills</p>
+          <h2>Tools I work with</h2>
+        </div>
+
+        <div class="skills-grid reveal">
+          <article class="card skill-card">
+            <div class="card-icon"><i class="fas fa-display"></i></div>
+            <h3>Frontend</h3>
+            <div class="tags"><span>Angular</span><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+          </article>
+          <article class="card skill-card">
+            <div class="card-icon"><i class="fas fa-server"></i></div>
+            <h3>Backend</h3>
+            <div class="tags"><span>Python</span><span>Odoo</span><span>SQL</span><span>PostgreSQL</span></div>
+          </article>
+          <article class="card skill-card">
+            <div class="card-icon"><i class="fas fa-gears"></i></div>
+            <h3>DevOps</h3>
+            <div class="tags"><span>Docker</span><span>CI/CD</span><span>Git</span></div>
+          </article>
+          <article class="card skill-card">
+            <div class="card-icon"><i class="fas fa-brain"></i></div>
+            <h3>AI / ML</h3>
+            <div class="tags"><span>Machine Learning</span><span>Data Analysis</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">04 · Projects</p>
+          <h2>Things I've built</h2>
+        </div>
+
+        <div class="projects-grid reveal">
+          <article class="card project-card">
+            <div class="card-icon"><i class="fas fa-helmet-safety"></i></div>
+            <h3>Construction Management</h3>
+            <p>A responsive web app for managing construction projects, workers, and materials efficiently.</p>
+            <span class="project-link muted"><i class="fas fa-lock"></i> Code available on request</span>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+            <h3>Learning Management System</h3>
+            <p>A dynamic platform for managing online courses, students, and assessments.</p>
+            <span class="project-link muted"><i class="fas fa-lock"></i> Code available on request</span>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-icon"><i class="fas fa-pen-nib"></i></div>
+            <h3>Blog Platform</h3>
+            <p>A blog platform with post creation and editing and a responsive UI, built with PHP, a database, HTML,
+              CSS and JavaScript.</p>
+            <a href="https://github.com/fahimanizam/My-blog" target="_blank" rel="noopener" class="project-link">
+              <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-icon"><i class="fas fa-prescription-bottle-medical"></i></div>
+            <h3>Health Check</h3>
+            <p>An online pharmacy management system with inventory tracking and order management.</p>
+            <span class="project-link muted"><i class="fas fa-lock"></i> Code available on request</span>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-icon"><i class="fas fa-users"></i></div>
+            <h3>Customer Management System</h3>
+            <p>A CRM-style web application for managing customer records and business operations.</p>
+            <span class="project-link muted"><i class="fas fa-lock"></i> Code available on request</span>
+          </article>
+
+          <article class="card project-card project-more">
+            <div class="card-icon"><i class="fab fa-github"></i></div>
+            <h3>More on GitHub</h3>
+            <p>Experiments, course work, and learning projects in Python, JavaScript, Java and C.</p>
+            <a href="https://github.com/fahimanizam?tab=repositories" target="_blank" rel="noopener"
+              class="project-link">
+              Browse repositories <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PLAYGROUND ================= -->
+    <section class="section" id="playground">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">05 · Playground</p>
+          <h2>Small things built for fun</h2>
+          <p class="section-sub">Interactive utilities and games written in plain JavaScript. Give them a try.</p>
+        </div>
+
+        <div class="tabs" role="tablist">
+          <button class="tab active" role="tab" aria-selected="true" data-tab="tools">
+            <i class="fas fa-toolbox"></i> Tools
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="arcade">
+            <i class="fas fa-gamepad"></i> Arcade
+          </button>
+        </div>
+
+        <!-- Tools -->
+        <div class="tab-panel active" id="tab-tools" role="tabpanel">
+          <div class="play-grid">
+
+            <div class="card mini-project">
+              <h3><i class="fas fa-cake-candles"></i> Age Calculator</h3>
+              <p>Calculate your exact age instantly.</p>
+              <input type="date" id="birthdate" aria-label="Birthdate">
+              <button class="btn btn-primary btn-block" onclick="calculateAge()">Calculate</button>
+              <div class="result" id="result"></div>
+            </div>
+
+            <div class="card mini-project">
+              <h3><i class="fas fa-key"></i> Password Generator</h3>
+              <p>Generate a strong, random password.</p>
+              <input type="number" id="passLength" placeholder="Length (min 4)" aria-label="Password length">
+              <button class="btn btn-primary btn-block" onclick="generatePassword()">Generate</button>
+              <div class="result mono" id="passwordResult"></div>
+            </div>
+
+            <div class="card mini-project">
+              <h3><i class="fas fa-weight-scale"></i> BMI Calculator</h3>
+              <p>Compute BMI using height in feet and inches.</p>
+              <input type="number" id="weight" placeholder="Weight (kg)" aria-label="Weight in kg">
+              <div class="input-row">
+                <input type="number" id="heightFeet" placeholder="Feet" aria-label="Height feet">
+                <input type="number" id="heightInch" placeholder="Inches" aria-label="Height inches">
+              </div>
+              <button class="btn btn-primary btn-block" onclick="calculateBMI()">Calculate</button>
+              <div class="result" id="bmiResult"></div>
+            </div>
+
+            <div class="card mini-project">
+              <h3><i class="fas fa-dice"></i> Number Guessing</h3>
+              <p>Guess the secret number between 1 and 10.</p>
+              <input type="number" id="guessInput" min="1" max="10" placeholder="Your guess" aria-label="Your guess">
+              <button class="btn btn-primary btn-block" onclick="checkGuess()">Guess</button>
+              <div class="result" id="guessResult"></div>
+            </div>
+
+            <div class="card mini-project">
+              <h3><i class="fas fa-hat-wizard"></i> The Sorting Hat</h3>
+              <p>Enter your name and let the hat decide your house.</p>
+              <input type="text" id="hatName" placeholder="Your name" aria-label="Your name">
+              <button class="btn btn-primary btn-block" onclick="sortingHat()">Sort Me</button>
+              <div class="result" id="hatResult"></div>
+            </div>
+
+            <div class="card mini-project">
+              <h3><i class="fas fa-keyboard"></i> Typing Speed Test</h3>
+              <p>Type the sentence below as fast as you can.</p>
+              <p class="typing-target" id="typingTarget"></p>
+              <input type="text" id="typingInput" placeholder="Start typing to begin..." autocomplete="off"
+                oninput="checkTyping()" aria-label="Type the sentence">
+              <button class="btn btn-outline btn-block" onclick="resetTyping()">New Sentence</button>
+              <div class="result" id="typingResult"></div>
+            </div>
+
+            <div class="card mini-project">
+              <h3><i class="fas fa-mug-hot"></i> Pomodoro Timer</h3>
+              <p>25 minutes of focus, then a 5 minute coffee break.</p>
+              <div class="timer-display" id="pomoDisplay">25:00</div>
+              <div class="btn-group">
+                <button class="btn btn-primary" onclick="togglePomodoro()" id="pomoStartBtn">Start</button>
+                <button class="btn btn-outline" onclick="resetPomodoro()">Reset</button>
+              </div>
+              <div class="result" id="pomoResult">Focus session</div>
+            </div>
+
+            <div class="card mini-project">
+              <h3><i class="fas fa-bolt"></i> Reaction Time</h3>
+              <p>Click the box as soon as it turns green.</p>
+              <div class="reaction-box" id="reactionBox" onclick="reactionClick()" role="button" tabindex="0">Click
+                to start</div>
+              <div class="result" id="reactionResult"></div>
+            </div>
+
+            <div class="card mini-project">
+              <h3><i class="fas fa-palette"></i> Palette Generator</h3>
+              <p>Generate a palette. Click a color to copy its hex code.</p>
+              <div class="palette" id="palette"></div>
+              <button class="btn btn-primary btn-block" onclick="generatePalette()">Generate</button>
+              <div class="result" id="paletteResult"></div>
+            </div>
+
+            <div class="card mini-project">
+              <h3><i class="fas fa-align-left"></i> Word Counter</h3>
+              <p>Count words and characters and estimate reading time.</p>
+              <textarea id="wordInput" rows="4" placeholder="Paste or type your text..." oninput="countWords()"
+                aria-label="Text to count"></textarea>
+              <div class="result" id="wordResult">0 words · 0 characters · 0 min read</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Arcade -->
+        <div class="tab-panel" id="tab-arcade" role="tabpanel">
+          <div class="play-grid">
+            <div class="card game-card">
+              <div class="game-icon">🐍</div>
+              <h3>Snake</h3>
+              <p>Eat, grow, and don't bite your own tail. Arrow keys, WASD, or swipe.</p>
+              <button class="btn btn-primary btn-block" onclick="openGame('snake')"><i class="fas fa-play"></i>
+                Play</button>
+            </div>
+            <div class="card game-card">
+              <div class="game-icon">🦆</div>
+              <h3>Duck Shooting</h3>
+              <p>Hit as many flying ducks as you can in 30 seconds. Click or tap to shoot.</p>
+              <button class="btn btn-primary btn-block" onclick="openGame('duck')"><i class="fas fa-play"></i>
+                Play</button>
+            </div>
+            <div class="card game-card">
+              <div class="game-icon">🐛</div>
+              <h3>Bug Stomper: Ship It!</h3>
+              <p>Run, jump, stomp the bugs, collect coffee beans, and reach the laptop to deploy.</p>
+              <button class="btn btn-primary btn-block" onclick="openGame('platformer')"><i class="fas fa-play"></i>
+                Play</button>
+            </div>
+            <div class="card game-card">
+              <div class="game-icon">🧱</div>
+              <h3>Brick Breaker</h3>
+              <p>Bounce the ball and smash every brick. Mouse, touch, or arrow keys.</p>
+              <button class="btn btn-primary btn-block" onclick="openGame('bricks')"><i class="fas fa-play"></i>
+                Play</button>
+            </div>
+            <div class="card game-card">
+              <div class="game-icon">🃏</div>
+              <h3>Memory Match</h3>
+              <p>Flip cards and find all 8 pairs in as few moves as possible.</p>
+              <button class="btn btn-primary btn-block" onclick="openGame('memory')"><i class="fas fa-play"></i>
+                Play</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BEYOND CODE ================= -->
+    <section class="section section-alt" id="beyond">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">06 · Beyond Code</p>
+          <h2>What drives me</h2>
+        </div>
+
+        <!-- Vision -->
+        <h3 class="block-title">What I'm working toward</h3>
+        <div class="vision-grid reveal">
+          <div class="card vision-card">
+            <span class="vision-emoji">🚀</span>
+            <h4>Grow as an Engineer</h4>
+            <p>Write clean, reliable code and take ownership of features from idea to release.</p>
+          </div>
+          <div class="card vision-card">
+            <span class="vision-emoji">🤖</span>
+            <h4>Learn AI, One Project at a Time</h4>
+            <p>Build small, practical AI projects and really understand how they work.</p>
+          </div>
+          <div class="card vision-card">
+            <span class="vision-emoji">🌏</span>
+            <h4>Work with a Global Team</h4>
+            <p>Collaborate with people from around the world on products that help others.</p>
+          </div>
+          <div class="card vision-card">
+            <span class="vision-emoji">✍️</span>
+            <h4>Write & Share</h4>
+            <p>Publish what I learn on my blog regularly, so it can help someone else too.</p>
+          </div>
+          <div class="card vision-card">
+            <span class="vision-emoji">🤝</span>
+            <h4>Give Back</h4>
+            <p>Contribute to open source and support other learners on their journey.</p>
+          </div>
+          <div class="card vision-card">
+            <span class="vision-emoji">🌱</span>
+            <h4>A Balanced, Happy Life</h4>
+            <p>Make time for health, family, books, and creative DIY projects, and enjoy the journey.</p>
+          </div>
+        </div>
+
+        <!-- Library -->
+        <h3 class="block-title">On my bookshelf</h3>
+        <div class="library-grid reveal">
+          <button class="book"
+            onclick="openBook('The Alchemist', 'assets/images/books/the_alchemist.jpg', 'Paulo Coelho\'s novel about a shepherd who follows his dream, and a reminder to listen to your heart.')">
+            <img src="assets/images/books/the_alchemist.jpg" alt="The Alchemist cover" loading="lazy">
+            <span>The Alchemist</span>
+          </button>
+          <button class="book"
+            onclick="openBook('Atomic Habits', 'assets/images/books/atomic_habits.jpg', 'James Clear\'s guide to how small, consistent habits compound into remarkable results.')">
+            <img src="assets/images/books/atomic_habits.jpg" alt="Atomic Habits cover" loading="lazy">
+            <span>Atomic Habits</span>
+          </button>
+          <button class="book"
+            onclick="openBook('Harry Potter', 'assets/images/books/harry_potter.jpg', 'J.K. Rowling\'s fantasy series. Pure magic, friendship, and courage.')">
+            <img src="assets/images/books/harry_potter.jpg" alt="Harry Potter cover" loading="lazy">
+            <span>Harry Potter</span>
+          </button>
+        </div>
+
+        <!-- Writing -->
+        <h3 class="block-title">Writing</h3>
+        <div class="blog-grid reveal">
+          <button class="card blog-card" data-title="সাইবার সিকিউরিটি সচেতনতা !(Cyber Security awareness)"
+            data-date="Oct 31, 2019"
+            data-link="https://fahima.home.blog/2019/10/31/%e0%a6%b8%e0%a6%be%e0%a6%87%e0%a6%ac%e0%a6%be%e0%a6%b0-%e0%a6%b8%e0%a6%bf%e0%a6%95%e0%a6%bf%e0%a6%89%e0%a6%b0%e0%a6%bf%e0%a6%9f%e0%a6%bf-%e0%a6%b8%e0%a6%9a%e0%a7%87%e0%a6%a4%e0%a6%a8%e0%a6%a4%e0%a6%be/"
+            data-content="আজকে আমি একটা সেমিনারে অংশগ্রহণ করেছি সাইবার নিরাপত্তার ব্যাপারে সচেতনতা মূলক। শিক্ষার্থীদের উদ্দেশ্যে এটা ছিলো ড্যাফডিল ইন্টারন্যাশনাল ইউনিভার্সিটি আয়োজিত একটি সচেতনতা মূলক সেমিনার যেখানে আমরা অনেক অজানা তথ্য পেয়েছি। কিভাবে হ্যাকারদের কবল থেকে রক্ষা পাওয়া যেতে পারে সে বিষয়ে কিছু ধারণা পেয়েছি।">
+            <span class="meta">Oct 31, 2019</span>
+            <h4>সাইবার সিকিউরিটি সচেতনতা (Cyber Security Awareness)</h4>
+            <p>আজকে আমি একটা সেমিনারে অংশগ্রহণ করেছি সাইবার নিরাপত্তার ব্যাপারে সচেতনতা মূলক। শিক্ষার্থীদের উদ্দেশ্যে এটা
+              ছিলো ড্যাফডিল ইন্টারন্যাশনাল ইউনিভার্সিটি আয়োজিত একটি সচেতনতা মূলক সেমিনার...</p>
+          </button>
+
+          <button class="card blog-card" data-title="ICT Carnival 2019 DIU" data-date="Oct 26, 2019"
+            data-link="https://fahima.home.blog/2019/10/26/ict-carnival-2019-diu/"
+            data-content="Ict carnival is celebrated by the authority of Daffodil international University. They give the student a great opportunity to show their projects and thesis. The authority of Daffodil university beliefs to give focus on the talents of students and creat opportunity for them.">
+            <span class="meta">Oct 26, 2019</span>
+            <h4>ICT Carnival 2019 at DIU</h4>
+            <p>Daffodil International University's ICT Carnival gives students a great opportunity to showcase their
+              projects and theses...</p>
+          </button>
+
+          <button class="card blog-card" data-title="Recently i know the term thesis!" data-date="Oct 20, 2019"
+            data-link="https://fahima.home.blog/2019/10/20/recently-i-know-the-term-thesis/"
+            data-content="In my university, the alumni made them fit for job by creating their own projects. I also have the intention to create a dynamic project as it is compulsory. But i have learnt from my teacher that if i want to take higher study thesis is necessary.">
+            <span class="meta">Oct 20, 2019</span>
+            <h4>Discovering the Thesis</h4>
+            <p>Projects prepare you for the job market, but a thesis opens the door to higher studies. What I learned
+              from my teacher...</p>
+          </button>
+
+          <button class="card blog-card" data-title="The celebration of our CIS day" data-date="Oct 14, 2019"
+            data-link="https://fahima.home.blog/2019/10/14/the-celebration-of-our-cis-day/"
+            data-content="We have observed our CIS day in 14 October, 2019. It was a nice experience. We have observed the speech of our chairman sir Md. Sabur khan. He told us many valuable points that is important to be successful.">
+            <span class="meta">Oct 14, 2019</span>
+            <h4>Celebrating CIS Day</h4>
+            <p>Highlights from our CIS Day on 14 October 2019, including valuable advice on success from our
+              chairman...</p>
+          </button>
+        </div>
+        <a href="https://fahima.home.blog/" target="_blank" rel="noopener" class="text-link">
+          Read all posts on my blog <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <p class="section-label">07 · Contact</p>
+          <h2>Let's build something together</h2>
+          <p>Whether it's a role, a project, or just a chat about tech, my inbox is always open.</p>
+          <div class="contact-actions">
+            <a href="mailto:fahimanizamnova@gmail.com" class="btn btn-light">
+              <i class="fas fa-envelope"></i> fahimanizamnova@gmail.com
+            </a>
+            <button class="btn btn-ghost-light" id="copyEmail" data-email="fahimanizamnova@gmail.com">
+              <i class="far fa-copy"></i> <span>Copy email</span>
+            </button>
+          </div>
+          <div class="contact-social">
+            <a href="https://www.linkedin.com/in/fahima-nizam-nova/" target="_blank" rel="noopener"><i
+                class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://github.com/fahimanizam" target="_blank" rel="noopener"><i class="fab fa-github"></i>
+              GitHub</a>
+            <a href="https://fahima.home.blog/" target="_blank" rel="noopener"><i class="fas fa-pen"></i> Blog</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Fahima Nizam Nova · Built with HTML, CSS & vanilla JS ☕</p>
+      <button class="music-toggle" id="musicToggle" aria-pressed="false" title="Play theme music">
+        <i class="fas fa-music"></i> <span>Play theme</span>
+      </button>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- ================= MODALS ================= -->
+  <div id="bookModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
+    <div class="modal-box book-box">
+      <button class="modal-close" onclick="closeModal('bookModal')" aria-label="Close">&times;</button>
+      <img id="bookImg" src="" alt="">
+      <h3 id="bookTitle"></h3>
+      <p id="bookReview"></p>
+    </div>
+  </div>
+
+  <div id="blogModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('blogModal')" aria-label="Close">&times;</button>
+      <span id="modalDate" class="meta"></span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalText"></p>
+      <a id="modalLink" class="text-link" href="#" target="_blank" rel="noopener">Read full post <i
+          class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+
+  <div id="resumeModal" class="modal" role="dialog" aria-modal="true" aria-label="Resume">
+    <div class="modal-box resume-box">
       <div class="resume-header">
         <h3>Resume</h3>
         <div class="resume-actions">
           <a href="https://drive.google.com/uc?export=download&id=1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo"
-            class="resume-download" title="Download PDF"><i class="fas fa-download"></i> Download</a>
-          <a href="https://drive.google.com/file/d/1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo/view?usp=sharing"
-            target="_blank" title="Open in new tab"><i class="fas fa-up-right-from-square"></i></a>
-          <span class="resume-close" onclick="closeResume()">✖</span>
+            class="btn btn-small btn-primary" title="Download PDF"><i class="fas fa-download"></i> Download</a>
+          <a href="https://drive.google.com/file/d/1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo/view?usp=sharing" target="_blank"
+            rel="noopener" class="icon-btn" title="Open in new tab"><i class="fas fa-up-right-from-square"></i></a>
+          <button class="icon-btn" onclick="closeModal('resumeModal')" aria-label="Close"><i
+              class="fas fa-xmark"></i></button>
         </div>
       </div>
-      <iframe id="resumeFrame" title="Resume" allow="autoplay"></iframe>
+      <iframe id="resumeFrame" title="Resume"></iframe>
     </div>
   </div>
 
-  <audio id="bg-music" autoplay>
+  <div id="gameModal" class="game-modal" role="dialog" aria-modal="true" aria-labelledby="gameTitle">
+    <div class="game-content">
+      <div class="game-header">
+        <h3 id="gameTitle">Game</h3>
+        <span class="game-score" id="gameScore"></span>
+        <button class="game-close" onclick="closeGame()" title="Close (Esc)" aria-label="Close">&times;</button>
+      </div>
+      <canvas id="gameCanvas" width="480" height="320"></canvas>
+      <p class="game-help" id="gameHelp"></p>
+      <div class="touch-controls" id="touchControls">
+        <button data-key="ArrowLeft" aria-label="Left">◀</button>
+        <button data-key="ArrowUp" aria-label="Up">▲</button>
+        <button data-key="ArrowDown" aria-label="Down">▼</button>
+        <button data-key="ArrowRight" aria-label="Right">▶</button>
+        <button data-key="Space" class="touch-action" aria-label="Action">A</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bg-music" loop preload="none">
     <source src="assets/music/harry_potter.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Social + Scroll Wrapper -->
-  <div class="side-wrapper">
-
-    <!-- Social Bar -->
-    <div class="social-bar">
-      <a href="https://github.com/fahimanizam" target="_blank" class="social-item"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/fahima-nizam-nova/" target="_blank" class="social-item"><i
-          class="fab fa-linkedin"></i></a>
-      <a href="mailto:fahimanizamnova@gmail.com" title="Click me to email" class="social-item gmail">
-        <i class="fas fa-envelope"></i>
-        <span class="tooltip">fahimanizamnova@gmail.com</span>
-      </a>
-    </div>
-
-
-    <!-- Scroll Buttons -->
-    <div class="scroll-group">
-      <button id="scrollUp" class="scroll-btn">↑</button>
-      <button id="scrollDown" class="scroll-btn">↓</button>
-    </div>
-
-  </div>
-
-  <!-- ================= FOOTER ================= -->
-  <footer>
-    <div class="footer" id="contact">
-      <p>© 2025 Fahima Nizam Nova | Made with ☕</p>
-    </div>
-  </footer>
-
   <!-- ================= JS ================= -->
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/pro.js"></script>
   <script src="assets/js/games.js"></script>
+  <script src="assets/js/switcher.js"></script>
 
 </body>
 

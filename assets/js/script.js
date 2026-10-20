@@ -95,21 +95,6 @@
       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
     });
 
-    // --- GitHub dynamic tooltip ---
-    async function fetchGitHubProfile() {
-      const username = "yourusername"; // change this
-      const res = await fetch(`https://api.github.com/users/${username}`);
-      const data = await res.json();
-      const tooltip = document.getElementById("githubTooltip");
-      tooltip.innerHTML = `
-    <strong>${data.name || username}</strong><br>
-    ${data.bio || ''}<br>
-    Repos: ${data.public_repos}<br>
-    Followers: ${data.followers}<br>
-    <a href="${data.html_url}" target="_blank">View Profile</a>
-  `;
-    }
-    fetchGitHubProfile();
 
     // Age Calculator
     function calculateAge() {
@@ -183,11 +168,6 @@
       document.getElementById("bookModal").style.display = "flex";
     }
 
-    function closeBook() { document.getElementById("bookModal").style.display = "none"; }
-    window.onclick = function (event) {
-      const modal = document.getElementById("bookModal");
-      if (event.target === modal) modal.style.display = "none";
-    }
 
     // Resume Modal
     const resumeModal = document.getElementById("resumeModal");
@@ -248,10 +228,13 @@
       });
     });
 
-    function closeBook() { document.getElementById("blogModal").style.display = "none"; }
+    // Closes the book and blog modals (both use the same close button handler)
+    function closeBook() {
+      document.getElementById("bookModal").style.display = "none";
+      document.getElementById("blogModal").style.display = "none";
+    }
     window.onclick = function (event) {
-      const modal = document.getElementById("blogModal");
-      if (event.target === modal) modal.style.display = "none";
+      if (event.target.id === "bookModal" || event.target.id === "blogModal") closeBook();
     };
 
     window.addEventListener("click", (e) => {
@@ -437,3 +420,19 @@
       document.getElementById("wordResult").innerHTML =
         `${words} words · ${text.length} characters · ${minutes} min read`;
     }
+
+    // Night mode: "Nox" turns the lights off, "Lumos" turns them back on
+    const nightToggle = document.getElementById("nightToggle");
+    function renderNightToggle() {
+      const isNight = document.documentElement.getAttribute("data-theme") === "dark";
+      nightToggle.textContent = isNight ? "✨ Lumos" : "🌙 Nox";
+      nightToggle.title = isNight ? "Switch to day mode" : "Switch to night mode";
+    }
+    nightToggle.addEventListener("click", () => {
+      const isNight = document.documentElement.getAttribute("data-theme") === "dark";
+      if (isNight) document.documentElement.removeAttribute("data-theme");
+      else document.documentElement.setAttribute("data-theme", "dark");
+      try { localStorage.setItem("theme", isNight ? "light" : "dark"); } catch { }
+      renderNightToggle();
+    });
+    renderNightToggle();
