@@ -33,6 +33,7 @@
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#mini-projects">MiniProjects</a>
+        <a href="#arcade">Arcade</a>
         <a href="https://drive.google.com/file/d/1f1sk7_fA4Vdjxr1X1xU9TRYpZYT4E-xo/view?usp=sharing"
           target="_blank">Resume</a>
         <a href="#more-about">More</a>
@@ -356,6 +357,55 @@
     </div>
   </section>
 
+  <!-- ================= RETRO ARCADE ================= -->
+  <section id="arcade">
+    <div class="container">
+      <div class="mini-projects-header">
+        <h1>Retro Arcade 🕹️</h1>
+        <p>Classic-style games built from scratch with JavaScript and canvas. Take a coffee break!</p>
+      </div>
+
+      <div class="mini-projects-grid">
+
+        <div class="mini-project game-card">
+          <div class="game-icon">🐍</div>
+          <h2>Snake</h2>
+          <p>Eat, grow, and don't bite your own tail. Arrow keys / WASD or swipe.</p>
+          <button onclick="openGame('snake')">Play</button>
+        </div>
+
+        <div class="mini-project game-card">
+          <div class="game-icon">🦆</div>
+          <h2>Duck Shooting</h2>
+          <p>Hit as many flying ducks as you can in 30 seconds. Click or tap to shoot.</p>
+          <button onclick="openGame('duck')">Play</button>
+        </div>
+
+        <div class="mini-project game-card">
+          <div class="game-icon">🐛</div>
+          <h2>Bug Stomper: Ship It!</h2>
+          <p>A platformer: run, jump, stomp the bugs, collect coffee beans and reach the laptop to deploy.</p>
+          <button onclick="openGame('platformer')">Play</button>
+        </div>
+
+        <div class="mini-project game-card">
+          <div class="game-icon">🧱</div>
+          <h2>Brick Breaker</h2>
+          <p>Bounce the ball and smash every brick. Mouse, touch, or arrow keys.</p>
+          <button onclick="openGame('bricks')">Play</button>
+        </div>
+
+        <div class="mini-project game-card">
+          <div class="game-icon">🃏</div>
+          <h2>Memory Match</h2>
+          <p>Flip cards and find all 8 pairs in as few moves as possible.</p>
+          <button onclick="openGame('memory')">Play</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- More about me -->
   <section id="more-about">
     <div class="container">
@@ -481,6 +531,26 @@
     </div>
   </section>
 
+  <!-- Game Modal -->
+  <div id="gameModal" class="game-modal">
+    <div class="game-content">
+      <div class="game-header">
+        <h3 id="gameTitle">Game</h3>
+        <span class="game-score" id="gameScore"></span>
+        <button class="game-close" onclick="closeGame()" title="Close (Esc)">&times;</button>
+      </div>
+      <canvas id="gameCanvas" width="480" height="320"></canvas>
+      <p class="game-help" id="gameHelp"></p>
+      <div class="touch-controls" id="touchControls">
+        <button data-key="ArrowLeft">◀</button>
+        <button data-key="ArrowUp">▲</button>
+        <button data-key="ArrowDown">▼</button>
+        <button data-key="ArrowRight">▶</button>
+        <button data-key="Space" class="touch-action">A</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Resume Modal -->
   <div id="resumeModal" class="resume-modal">
     <div class="resume-content">
@@ -534,6 +604,7 @@
 
   <!-- ================= JS ================= -->
   <script src="assets/js/script.js"></script>
+  <script src="assets/js/games.js"></script>
 
 </body>
 

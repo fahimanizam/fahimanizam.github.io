@@ -563,6 +563,127 @@
         flex: 1.5;
     }
 
+    /* ================= RETRO ARCADE ================= */
+    #arcade {
+        padding: 80px 0;
+    }
+
+    .game-card {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .game-card p {
+        flex: 1;
+    }
+
+    .game-icon {
+        font-size: 44px;
+        margin-bottom: 8px;
+    }
+
+    .game-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.75);
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+    }
+
+    .game-content {
+        background: #1b1b24;
+        color: #fff;
+        width: 94%;
+        max-width: 680px;
+        border-radius: 18px;
+        padding: 16px;
+        animation: fadeIn 0.3s ease;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .game-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .game-header h3 {
+        font-size: 18px;
+    }
+
+    .game-score {
+        margin-left: auto;
+        font-size: 14px;
+        font-weight: 600;
+        color: #ffd54f;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .game-close {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 28px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    #gameCanvas {
+        display: block;
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        border-radius: 10px;
+        touch-action: none;
+        user-select: none;
+    }
+
+    .game-help {
+        margin-top: 10px;
+        font-size: 13px;
+        color: #aaa;
+        text-align: center;
+    }
+
+    .touch-controls {
+        display: none;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 12px;
+    }
+
+    .touch-controls button {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        border: none;
+        background: #33334a;
+        color: #fff;
+        font-size: 20px;
+        touch-action: none;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .touch-controls button:active {
+        background: #55557a;
+    }
+
+    .touch-controls .touch-action {
+        background: #c62828;
+        font-weight: 700;
+    }
+
+    /* On-screen buttons only on touch devices */
+    @media (pointer: coarse) {
+        .touch-controls.show {
+            display: flex;
+        }
+    }
+
     /* ================= VISION BOARD ================= */
     .vision-grid {
         display: grid;
@@ -1105,7 +1226,8 @@
             padding: 40px 16px;
         }
 
-        #mini-projects {
+        #mini-projects,
+        #arcade {
             padding: 40px 0;
         }
 
