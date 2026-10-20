@@ -33,7 +33,7 @@
         background: var(--primary);
         padding: 15px 60px;
         position: sticky;
-        top: var(--switch-h, 0px);
+        top: 0;
         z-index: 1000;
     }
 
@@ -1618,13 +1618,13 @@
         border-top: 1px solid rgba(245, 197, 66, 0.25);
     }
 
-    /* Keep anchored sections clear of the sticky switcher bar + navbar */
+    /* Keep anchored sections clear of the sticky navbar */
     html {
-        scroll-padding-top: 120px;
+        scroll-padding-top: 80px;
     }
 
     @media (max-width: 768px) {
         html {
-            scroll-padding-top: 150px;
+            scroll-padding-top: 110px;
         }
     }

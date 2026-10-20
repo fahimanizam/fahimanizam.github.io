@@ -46,15 +46,6 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ================= TEMPLATE SWITCHER ================= -->
-  <div class="template-bar">
-    <span class="template-bar-label">Choose a style:</span>
-    <div class="template-switch" role="group" aria-label="Choose site template">
-      <a href="index.html" data-template="developer" class="active" aria-current="page">💻 Developer</a>
-      <a href="hogwarts.html" data-template="hogwarts">🪄 Hogwarts</a>
-    </div>
-  </div>
-
 
   <!-- ================= NAVBAR ================= -->
   <header class="navbar" id="navbar">
@@ -679,6 +670,13 @@ nova.<span class="c-fn">build</span>(<span class="c-str">"things that matter"</s
       </button>
     </div>
   </footer>
+
+  <!-- Style switcher: try the Hogwarts edition -->
+  <a href="hogwarts.html" class="mode-fab mode-fab--hogwarts" data-template="hogwarts"
+    aria-label="Switch to the Hogwarts style">
+    <span class="mode-fab-icon" aria-hidden="true">🪄</span>
+    <span class="mode-fab-label">Switch to Hogwarts</span>
+  </a>
 
   <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 

@@ -30,15 +30,6 @@
 
 <body>
 
-  <!-- ================= TEMPLATE SWITCHER ================= -->
-  <div class="template-bar">
-    <span class="template-bar-label">Choose a style:</span>
-    <div class="template-switch" role="group" aria-label="Choose site template">
-      <a href="index.html" data-template="developer">💻 Developer</a>
-      <a href="hogwarts.html" data-template="hogwarts" class="active" aria-current="page">🪄 Hogwarts</a>
-    </div>
-  </div>
-
 
   <!-- ================= NAVBAR ================= -->
   <nav class="navbar">
@@ -593,6 +584,13 @@
   <audio id="bg-music" autoplay>
     <source src="assets/music/harry_potter.mp3" type="audio/mpeg">
   </audio>
+
+  <!-- Style switcher: back to the Developer edition -->
+  <a href="index.html" class="mode-fab mode-fab--developer" data-template="developer"
+    aria-label="Switch to the Developer style">
+    <span class="mode-fab-icon" aria-hidden="true">💻</span>
+    <span class="mode-fab-label">Switch to Developer<span class="mode-fab-cursor">_</span></span>
+  </a>
 
   <!-- Social + Scroll Wrapper -->
   <div class="side-wrapper">
