@@ -107,9 +107,13 @@
     outline-offset: 4px;
 }
 
-/* Clicked (browsers without page transitions): quick icon spin */
-.mode-fab.launching .mode-fab-icon {
-    animation: fab-spin 0.15s ease-in forwards;
+/* Clicked: the button swells and glows while it throws sparkles */
+.mode-fab.charging {
+    animation: fab-charge 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.mode-fab.charging .mode-fab-icon {
+    animation: fab-spin 0.3s ease-in-out forwards;
 }
 
 /* Switching pages: the new style grows out of the button as a circle.
@@ -119,21 +123,94 @@
     navigation: auto;
 }
 
+.mode-fab {
+    view-transition-name: mode-fab;
+}
+
+/* Old page sinks back and dims while the new one grows over it
+   with a soft, feathered edge */
+@property --reveal {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: 0px;
+}
+
 ::view-transition-old(root) {
-    animation: none;
+    animation: mode-sink 1.1s cubic-bezier(0.65, 0, 0.35, 1) both;
+    transform-origin: 47px calc(100% - 47px);
 }
 
 ::view-transition-new(root) {
-    animation: mode-reveal 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: mode-reveal 1.1s cubic-bezier(0.65, 0, 0.35, 1) both;
+    transform-origin: 47px calc(100% - 47px);
+    -webkit-mask-image: radial-gradient(circle at 47px calc(100% - 47px), #000 calc(var(--reveal) - 90px), transparent var(--reveal));
+    mask-image: radial-gradient(circle at 47px calc(100% - 47px), #000 calc(var(--reveal) - 90px), transparent var(--reveal));
+}
+
+/* Sparkle layer (added by switcher.js) floats above the transition */
+.mode-sparkles {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    pointer-events: none;
+    overflow: hidden;
+    view-transition-name: mode-sparkles;
+}
+
+.mode-sparkles span {
+    position: absolute;
+    line-height: 1;
+    will-change: transform, opacity;
+}
+
+::view-transition-group(mode-sparkles),
+::view-transition-new(mode-sparkles) {
+    animation: none;
+}
+
+/* The button stays on top and spins from one style into the other */
+::view-transition-group(mode-fab) {
+    animation-duration: 0.5s;
+}
+
+::view-transition-old(mode-fab) {
+    animation: fab-out 0.3s ease-in both;
+}
+
+::view-transition-new(mode-fab) {
+    animation: fab-in 0.45s 0.15s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
 @keyframes mode-reveal {
     from {
-        clip-path: circle(0 at 47px calc(100% - 47px));
+        --reveal: 0px;
+        transform: scale(1.05);
     }
 
     to {
-        clip-path: circle(150vmax at 47px calc(100% - 47px));
+        --reveal: 170vmax;
+        transform: scale(1);
+    }
+}
+
+@keyframes mode-sink {
+    to {
+        transform: scale(0.96);
+        filter: brightness(0.6) blur(3px);
+    }
+}
+
+@keyframes fab-out {
+    to {
+        transform: rotate(-180deg) scale(0.4);
+        opacity: 0;
+    }
+}
+
+@keyframes fab-in {
+    from {
+        transform: rotate(180deg) scale(0.4);
+        opacity: 0;
     }
 }
 
@@ -191,7 +268,14 @@
 
 @keyframes fab-spin {
     to {
-        transform: rotate(360deg) scale(1.3);
+        transform: rotate(360deg) scale(1.2);
+    }
+}
+
+@keyframes fab-charge {
+    to {
+        transform: scale(1.18);
+        box-shadow: 0 0 0 6px color-mix(in srgb, currentColor 25%, transparent), 0 0 30px currentColor;
     }
 }
 
