@@ -296,6 +296,62 @@
           <div class="result" id="guessResult"></div>
         </div>
 
+        <!-- Sorting Hat -->
+        <div class="mini-project">
+          <h2>The Sorting Hat 🎩</h2>
+          <p>Enter your name and let the hat decide your house.</p>
+          <input type="text" id="hatName" placeholder="Your name">
+          <button onclick="sortingHat()">Sort Me!</button>
+          <div class="result" id="hatResult"></div>
+        </div>
+
+        <!-- Typing Speed Test -->
+        <div class="mini-project">
+          <h2>Typing Speed Test</h2>
+          <p>Type the sentence below as fast as you can.</p>
+          <p class="typing-target" id="typingTarget"></p>
+          <input type="text" id="typingInput" placeholder="Start typing to begin..." autocomplete="off" oninput="checkTyping()">
+          <button onclick="resetTyping()">New Sentence</button>
+          <div class="result" id="typingResult"></div>
+        </div>
+
+        <!-- Pomodoro Timer -->
+        <div class="mini-project">
+          <h2>Pomodoro Focus Timer ☕</h2>
+          <p>25 minutes of focus, then a 5 minute coffee break.</p>
+          <div class="timer-display" id="pomoDisplay">25:00</div>
+          <div class="btn-group">
+            <button onclick="togglePomodoro()" id="pomoStartBtn">Start</button>
+            <button onclick="resetPomodoro()">Reset</button>
+          </div>
+          <div class="result" id="pomoResult">Focus session</div>
+        </div>
+
+        <!-- Reaction Time Test -->
+        <div class="mini-project">
+          <h2>Reaction Time Test</h2>
+          <p>Click the box when it turns green.</p>
+          <div class="reaction-box" id="reactionBox" onclick="reactionClick()">Click to start</div>
+          <div class="result" id="reactionResult"></div>
+        </div>
+
+        <!-- Color Palette Generator -->
+        <div class="mini-project">
+          <h2>Color Palette Generator</h2>
+          <p>Generate a palette. Click a color to copy its hex code.</p>
+          <div class="palette" id="palette"></div>
+          <button onclick="generatePalette()">Generate</button>
+          <div class="result" id="paletteResult"></div>
+        </div>
+
+        <!-- Word Counter -->
+        <div class="mini-project">
+          <h2>Word Counter</h2>
+          <p>Count words and characters and estimate reading time.</p>
+          <textarea id="wordInput" rows="4" placeholder="Paste or type your text..." oninput="countWords()"></textarea>
+          <div class="result" id="wordResult">0 words · 0 characters · 0 min read</div>
+        </div>
+
       </div>
     </div>
   </section>

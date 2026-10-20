@@ -489,6 +489,80 @@
         font-weight: 600;
     }
 
+    .mini-project textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        font-family: inherit;
+        resize: vertical;
+    }
+
+    .mini-project input:disabled {
+        background: #eef8ee;
+    }
+
+    .mini-project .typing-target {
+        background: #f4f6fb;
+        padding: 10px;
+        border-radius: 8px;
+        font-family: monospace;
+        color: #2b2b2b;
+    }
+
+    .btn-group {
+        display: flex;
+        gap: 10px;
+    }
+
+    .timer-display {
+        font-size: 44px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 12px;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .reaction-box {
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: #2b2b2b;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        user-select: none;
+        transition: background 0.15s ease;
+    }
+
+    .reaction-box.waiting {
+        background: #c0392b;
+    }
+
+    .reaction-box.ready {
+        background: #27ae60;
+    }
+
+    .palette {
+        display: flex;
+        height: 70px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+    .swatch {
+        flex: 1;
+        cursor: pointer;
+        transition: flex 0.2s ease;
+    }
+
+    .swatch:hover {
+        flex: 1.5;
+    }
+
     /* ================= VISION BOARD ================= */
     .vision-grid {
         display: grid;
@@ -1112,6 +1186,14 @@
 
         .mini-project {
             padding: 20px;
+        }
+
+        .mini-projects-grid {
+            gap: 20px;
+        }
+
+        .timer-display {
+            font-size: 36px;
         }
 
         /* Books: two per row */

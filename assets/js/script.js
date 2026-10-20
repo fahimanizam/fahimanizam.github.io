@@ -259,3 +259,181 @@
         modal.style.display = "none";
       }
     });
+    // Sorting Hat
+    function sortingHat() {
+      const name = document.getElementById("hatName").value.trim();
+      const result = document.getElementById("hatResult");
+      if (!name) { result.innerHTML = "The hat needs a name to think about..."; return; }
+      const houses = [
+        { name: "Gryffindor 🦁", trait: "brave and daring" },
+        { name: "Hufflepuff 🦡", trait: "loyal and kind" },
+        { name: "Ravenclaw 🦅", trait: "wise and curious" },
+        { name: "Slytherin 🐍", trait: "ambitious and clever" }
+      ];
+      // Same name always gets the same house
+      let hash = 0;
+      for (const ch of name.toLowerCase()) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
+      const house = houses[hash % houses.length];
+      result.innerHTML = "Hmm, difficult... very difficult...";
+      setTimeout(() => {
+        result.textContent = `${name}, you are ${house.trait}. Better be... ${house.name}!`;
+      }, 1200);
+    }
+
+    // Typing Speed Test
+    const typingSentences = [
+      "The quick brown fox jumps over the lazy dog.",
+      "Coffee first, then code, then more coffee.",
+      "It does not do to dwell on dreams and forget to live.",
+      "Small daily improvements lead to stunning results.",
+      "Debugging is twice as hard as writing the code in the first place."
+    ];
+    let typingSentence = "";
+    let typingStart = null;
+
+    function resetTyping() {
+      typingSentence = typingSentences[Math.floor(Math.random() * typingSentences.length)];
+      typingStart = null;
+      document.getElementById("typingTarget").textContent = typingSentence;
+      const input = document.getElementById("typingInput");
+      input.value = "";
+      input.disabled = false;
+      document.getElementById("typingResult").innerHTML = "";
+    }
+
+    function checkTyping() {
+      const input = document.getElementById("typingInput");
+      const result = document.getElementById("typingResult");
+      if (!typingStart) typingStart = Date.now();
+      const typed = input.value;
+      if (!typingSentence.startsWith(typed)) {
+        result.innerHTML = "❌ Typo! Fix it to continue.";
+        return;
+      }
+      result.innerHTML = "";
+      if (typed === typingSentence) {
+        const minutes = (Date.now() - typingStart) / 60000;
+        const wpm = Math.round((typingSentence.length / 5) / minutes);
+        result.innerHTML = `🎉 ${wpm} WPM in ${(minutes * 60).toFixed(1)}s`;
+        input.disabled = true;
+      }
+    }
+    resetTyping();
+
+    // Pomodoro Timer
+    let pomoSeconds = 25 * 60;
+    let pomoInterval = null;
+    let pomoOnBreak = false;
+
+    function renderPomodoro() {
+      const m = String(Math.floor(pomoSeconds / 60)).padStart(2, "0");
+      const s = String(pomoSeconds % 60).padStart(2, "0");
+      document.getElementById("pomoDisplay").textContent = `${m}:${s}`;
+    }
+
+    function togglePomodoro() {
+      const btn = document.getElementById("pomoStartBtn");
+      if (pomoInterval) {
+        clearInterval(pomoInterval);
+        pomoInterval = null;
+        btn.textContent = "Start";
+        return;
+      }
+      btn.textContent = "Pause";
+      pomoInterval = setInterval(() => {
+        pomoSeconds--;
+        if (pomoSeconds < 0) {
+          pomoOnBreak = !pomoOnBreak;
+          pomoSeconds = (pomoOnBreak ? 5 : 25) * 60;
+          document.getElementById("pomoResult").textContent = pomoOnBreak ? "☕ Coffee break!" : "Focus session";
+        }
+        renderPomodoro();
+      }, 1000);
+    }
+
+    function resetPomodoro() {
+      clearInterval(pomoInterval);
+      pomoInterval = null;
+      pomoOnBreak = false;
+      pomoSeconds = 25 * 60;
+      document.getElementById("pomoStartBtn").textContent = "Start";
+      document.getElementById("pomoResult").textContent = "Focus session";
+      renderPomodoro();
+    }
+
+    // Reaction Time Test
+    let reactionState = "idle"; // idle | waiting | ready
+    let reactionTimeout = null;
+    let reactionStart = 0;
+    let reactionBest = null;
+
+    function reactionClick() {
+      const box = document.getElementById("reactionBox");
+      const result = document.getElementById("reactionResult");
+      if (reactionState === "idle") {
+        reactionState = "waiting";
+        box.className = "reaction-box waiting";
+        box.textContent = "Wait for green...";
+        result.innerHTML = "";
+        reactionTimeout = setTimeout(() => {
+          reactionState = "ready";
+          box.className = "reaction-box ready";
+          box.textContent = "CLICK!";
+          reactionStart = performance.now();
+        }, 1500 + Math.random() * 2500);
+      } else if (reactionState === "waiting") {
+        clearTimeout(reactionTimeout);
+        reactionState = "idle";
+        box.className = "reaction-box";
+        box.textContent = "Too soon! Click to retry";
+      } else {
+        const ms = Math.round(performance.now() - reactionStart);
+        reactionBest = reactionBest === null ? ms : Math.min(reactionBest, ms);
+        reactionState = "idle";
+        box.className = "reaction-box";
+        box.textContent = "Click to try again";
+        result.innerHTML = `⚡ ${ms} ms (best: ${reactionBest} ms)`;
+      }
+    }
+
+    // Color Palette Generator
+    function generatePalette() {
+      const palette = document.getElementById("palette");
+      const baseHue = Math.floor(Math.random() * 360);
+      palette.innerHTML = "";
+      document.getElementById("paletteResult").innerHTML = "";
+      for (let k = 0; k < 5; k++) {
+        const hex = hslToHex((baseHue + k * 30) % 360, 65, 40 + k * 8);
+        const swatch = document.createElement("div");
+        swatch.className = "swatch";
+        swatch.style.background = hex;
+        swatch.title = hex;
+        swatch.addEventListener("click", () => {
+          navigator.clipboard.writeText(hex)
+            .then(() => document.getElementById("paletteResult").innerHTML = `Copied ${hex} 📋`)
+            .catch(() => document.getElementById("paletteResult").innerHTML = hex);
+        });
+        palette.appendChild(swatch);
+      }
+    }
+
+    function hslToHex(h, s, l) {
+      s /= 100; l /= 100;
+      const a = s * Math.min(l, 1 - l);
+      const f = n => {
+        const k = (n + h / 30) % 12;
+        const c = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+        return Math.round(255 * c).toString(16).padStart(2, "0");
+      };
+      return `#${f(0)}${f(8)}${f(4)}`;
+    }
+    generatePalette();
+
+    // Word Counter
+    function countWords() {
+      const text = document.getElementById("wordInput").value;
+      const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+      const minutes = Math.ceil(words / 200);
+      document.getElementById("wordResult").innerHTML =
+        `${words} words · ${text.length} characters · ${minutes} min read`;
+    }
